@@ -52,7 +52,7 @@ function NavBar() {
 
   const nameStyle = {
     transition: hovered ? 'transform 0.7s ease-in-out' : 'transform 1.0s ease-in-out',
-    transform: hovered ? 'translateY(-68%)' : 'translateY(0)',
+    transform: hovered ? 'translateY(-70%)' : 'translateY(0)',
   };
 
   const linksStyle = {
@@ -65,7 +65,7 @@ function NavBar() {
     //transition: hovered ? 'transform 0.7s ease-in-out' : 'transform 1.0s ease-in-out',
     //transform: hovered ? 'translateY(-100%)' : 'translateY(0)',
     marginRight: '0px',
-    marginTop: '20px',
+    marginTop: '5px',
     position: 'relative',
     textAlign: 'right',
   };
@@ -91,6 +91,18 @@ function NavBar() {
           Me
         </NavLink>
         <NavLink 
+          to="/sights" 
+          style={({ isActive }) => ({
+            ...linkStyle,
+            opacity: getLinkOpacity('sights'),
+            fontStyle: isActive ? 'italic' : 'normal',
+          })} 
+          onMouseEnter={() => handleMouseEnter('sights')} 
+          onMouseLeave={handleMouseLeave}
+        >
+          Sights
+        </NavLink>
+        <NavLink 
           to="/sounds" 
           style={({ isActive }) => ({
             ...linkStyle,
@@ -103,28 +115,16 @@ function NavBar() {
           Sounds
         </NavLink>
         <NavLink 
-          to="/images" 
+          to="/scripts" 
           style={({ isActive }) => ({
             ...linkStyle,
-            opacity: getLinkOpacity('images'),
+            opacity: getLinkOpacity('scripts'),
             fontStyle: isActive ? 'italic' : 'normal',
           })} 
-          onMouseEnter={() => handleMouseEnter('images')} 
+          onMouseEnter={() => handleMouseEnter('scripts')} 
           onMouseLeave={handleMouseLeave}
         >
-          Images
-        </NavLink>
-        <NavLink 
-          to="/machines" 
-          style={({ isActive }) => ({
-            ...linkStyle,
-            opacity: getLinkOpacity('machines'),
-            fontStyle: isActive ? 'italic' : 'normal',
-          })} 
-          onMouseEnter={() => handleMouseEnter('machines')} 
-          onMouseLeave={handleMouseLeave}
-        >
-          Machines
+          Scripts
         </NavLink>
       </div>
       <div style={socialMediaStyle}>

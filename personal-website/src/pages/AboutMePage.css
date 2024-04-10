@@ -1,0 +1,10 @@
+.resume-link {
+    color: #0048B3;
+    text-decoration: none;
+  }
+  
+  /* If you want to add hover effects */
+  .resume-link:hover {
+    text-decoration: underline;
+  }
+  

@@ -5,9 +5,9 @@ import HomePage from './pages/HomePage';
 import NavBar from './components/NavBar';
 
 import AboutMePage from './pages/AboutMePage';
-import MachinesPage from './pages/MachinesPage';
+import ScriptsPage from './pages/ScriptsPage';
 import SoundsPage from './pages/SoundsPage';
-import ImagesPage from './pages/ImagesPage';
+import SightsPage from './pages/SightsPage';
 
 function App() {
   return (
@@ -18,9 +18,9 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/me" element={<AboutMePage />} />
-            <Route path="/machines" element={<MachinesPage />} />
+            <Route path="/scripts" element={<ScriptsPage />} />
             <Route path="/sounds" element={<SoundsPage />} />
-            <Route path="/images" element={<ImagesPage />} />
+            <Route path="/sights" element={<SightsPage />} />
           </Routes>
         </div>
       </div>

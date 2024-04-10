@@ -1,0 +1,18 @@
+.page-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 87.2%;
+    margin-left: 435px;
+    padding: 0px;
+    overflow: auto;
+    text-align: left;
+    width: 60%;
+}
+
+.page-text {
+    font-size: 22px;
+    margin-bottom: 0;
+    padding-bottom: 5px;
+    text-align: left;
+}
