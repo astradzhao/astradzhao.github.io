@@ -1,0 +1,42 @@
+.navbar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.name {
+    font-size: 100px;
+    margin-top: 270px !important;
+    margin-left: 60px !important;
+    font-weight: 400;
+    margin: 0;
+    cursor: pointer;
+    position: relative;
+    text-align: right;
+}
+
+.navbar-container {
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: margin 0.5s ease-in-out;
+    z-index: 10;
+}
+
+.navbar-links {
+    font-size: 24px;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    margin-left: 238px !important;
+    margin-top: 300px !important;
+    position: absolute;
+    text-align: right;
+}
