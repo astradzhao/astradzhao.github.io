@@ -65,7 +65,7 @@ function NavBar() {
     //transition: hovered ? 'transform 0.7s ease-in-out' : 'transform 1.0s ease-in-out',
     //transform: hovered ? 'translateY(-100%)' : 'translateY(0)',
     marginRight: '0px',
-    marginTop: '10px',
+    marginTop: '20px',
     position: 'relative',
     textAlign: 'right',
   };
