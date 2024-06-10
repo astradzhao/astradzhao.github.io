@@ -1,18 +1,35 @@
 .page-container {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    height: 87.2%;
-    margin-left: 435px;
-    padding: 0px;
+    justify-content: flex-start; /* Adjust if necessary */
+    height: 100%; /* Adjust height */
+    margin: auto;
+    padding: 0;
     overflow: auto;
     text-align: left;
-    width: 60%;
+    width: 75%; /* Adjust width if necessary */
+    margin-top: 6vh;
 }
 
 .page-text {
-    font-size: 22px;
+    font-size: 1.7vmax;
     margin-bottom: 0;
-    padding-bottom: 5px;
+    padding-bottom: 0.5vh;
     text-align: left;
+}
+
+.page-text2 {
+    font-size: 1.35vmax;
+    margin-bottom: 0;
+    padding-bottom: 0.5vh;
+    text-align: left;
+}
+
+.page-header {
+    font-size: 1.65vmax;
+    margin-bottom: 0;
+    padding-bottom: 0.5vh;
+    text-align: left;
+    text-decoration: underline;
+    font-style: italic;
 }

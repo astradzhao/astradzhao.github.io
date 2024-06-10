@@ -1,10 +1,12 @@
+import React from 'react';
+import './Pages.css';
+
 function SoundsPage() {
     return (
-      <div>
-        Hello, this is my sounds page
+      <div className='page-container'>
+        <p className='page-text'> Sorry, this page is still under construction! </p>
       </div>
     );
   }
   
   export default SoundsPage;
-  

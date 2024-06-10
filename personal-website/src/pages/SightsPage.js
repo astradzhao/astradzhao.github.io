@@ -1,10 +1,12 @@
+import React from 'react';
+import './Pages.css';
+
 function SightsPage() {
     return (
-      <div>
-        Hello, this is my sights page
+      <div className='page-container'>
+        <p className='page-text'> Sorry, this page is still under construction! </p>
       </div>
     );
   }
   
   export default SightsPage;
-  

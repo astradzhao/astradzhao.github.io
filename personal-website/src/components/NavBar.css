@@ -1,42 +1,45 @@
 .navbar {
     position: fixed;
-    bottom: 0;
+    top: 0;  /* Changed from bottom to top */
     width: 100%;
     text-align: center;
-    padding: 10px 0;
-}
-
-.name {
-    font-size: 100px;
-    margin-top: 390px !important;
-    margin-left: 50px !important;
-    font-weight: 400;
-    margin: 0;
-    cursor: pointer;
-    position: relative;
-    text-align: right;
+    padding: 0 0;
+    z-index: 100; /* Ensure it's above all other content */
 }
 
 .navbar-container {
     position: fixed;
-    left: 20px;
-    top: 20px;
-    height: 100vh;
+    top: 0;  /* Align to the top of the viewport */
+    left: 50%;  /* Center align by moving the left edge to the middle of the viewport */
+    transform: translateX(-50%);  /* Shift it back by half of its own width */
+    width: 100%; /* Stretch across the top, but only taking up 70% of the full width */
+    height: auto; /* Adjust height as necessary */
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row; /* Maintain horizontal alignment */
+    justify-content: center; /* Center items horizontally within the container */
     transition: margin 0.5s ease-in-out;
-    z-index: 10;
+    margin-top: 3vh; /* Keep the top margin */
 }
 
+
 .navbar-links {
-    font-size: 24px;
+    font-size: 1.6vmax;
     text-decoration: none;
     color: black;
     display: flex;
-    flex-direction: column;
-    margin-left: 250px !important;
-    margin-top: 400px !important;
-    position: absolute;
-    text-align: right;
+    flex-direction: row;  /* Maintain row for horizontal layout */
+    gap: 1.2vmax;
+    margin: 0;
+    position: relative;
+    text-align: center;
+    height: auto;
+    align-items: flex-end;
+}
+
+.name {
+    font-size: 2.4vmax;
+    font-weight: 400;
+    cursor: pointer;
+    margin-right: 3vw;
+    margin-left: 0;
 }

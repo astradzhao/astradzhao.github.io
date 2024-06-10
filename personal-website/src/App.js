@@ -12,9 +12,9 @@ import SightsPage from './pages/SightsPage';
 function App() {
   return (
     <BrowserRouter>
-      <div className='App' style={{ display: 'flex', height: '100vh' }}>
+      <div className='App'>
         <NavBar />
-        <div style={{ flex: 1 }}>
+        <div className='main-content'>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/me" element={<AboutMePage />} />
