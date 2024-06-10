@@ -12,7 +12,7 @@ function ScriptsPage() {
         </p>
 
         <p className='page-header'>Convolutional Neural Network</p>
-        <p className='page-text2'>A brief CNN implementation that I worked on for a class at UC Berkeley can be found <a href="https://github.com/astradzhao/CNN" target="_blank" rel="noopener noreferrer" className="resume-link">here</a>.
+        <p className='page-text2'>A brief CNN project that I fully self-implemented a class at UC Berkeley can be found <a href="https://github.com/astradzhao/CNN" target="_blank" rel="noopener noreferrer" className="resume-link">here</a>.
         </p>
 
         <p className='page-header'>xv6-riscv OS</p>
