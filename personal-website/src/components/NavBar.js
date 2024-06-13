@@ -78,7 +78,7 @@ function NavBar() {
           </NavLink>
         ))}
       </div>
-      <div style={{ marginRight: '0', marginLeft: '20vw', marginTop: '1vh', position: 'relative', textAlign: 'right' }}>
+      <div style={{ marginRight: '0', marginLeft: '20vw', marginTop: '1.5vh', position: 'relative', textAlign: 'right' }}>
         <div style={{ display: 'inline-block', margin: '0 0.25vw' }}>
             <LinkedInIcon url={'https://www.linkedin.com/in/danzhao02/'} />
         </div>

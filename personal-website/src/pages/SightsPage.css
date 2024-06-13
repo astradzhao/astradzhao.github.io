@@ -1,0 +1,23 @@
+/* Container to center the grid on the page */
+.page-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: auto;
+    margin-top: 7vh;
+    padding-bottom: 5vh;
+}
+
+.image-page-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Four equal-width columns */
+    gap: 1.5vmax; /* Adjust the gap between the columns and rows as needed */
+    padding: 0; /* Adjust the padding around the grid as needed */
+    width: 85%;
+}
+
+.image-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vmax; /* Adjust the gap between the images in each column as needed */
+}

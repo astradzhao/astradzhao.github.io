@@ -1,0 +1,58 @@
+.image-template {
+    position: relative;
+    overflow: hidden;
+}
+
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: 100%;
+    transform: translate(var(--x), var(--y)) scale(var(--zoom));
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+.image-template:hover .image {
+    transform: translate(var(--x), var(--y)) scale(calc(var(--zoom) * 1.1));
+    cursor: pointer;
+}
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.popup-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 55%;
+    max-height: 80vh;
+    gap: 1vh;
+    cursor: default;
+}
+
+.popup-image {
+    max-width: 100%;
+    max-height: 75vh;
+    object-fit: cover;
+}

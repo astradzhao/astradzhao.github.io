@@ -1,24 +1,27 @@
 .navbar {
     position: fixed;
-    top: 0;  /* Changed from bottom to top */
+    top: 0; 
     width: 100%;
     text-align: center;
     padding: 0 0;
-    z-index: 100; /* Ensure it's above all other content */
+    z-index: 100;
 }
 
 .navbar-container {
     position: fixed;
-    top: 0;  /* Align to the top of the viewport */
-    left: 50%;  /* Center align by moving the left edge to the middle of the viewport */
-    transform: translateX(-50%);  /* Shift it back by half of its own width */
-    width: 100%; /* Stretch across the top, but only taking up 70% of the full width */
-    height: auto; /* Adjust height as necessary */
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%); 
+    width: 100%;
+    height: auto;
     display: flex;
-    flex-direction: row; /* Maintain horizontal alignment */
-    justify-content: center; /* Center items horizontally within the container */
+    flex-direction: row;
+    justify-content: center;
     transition: margin 0.5s ease-in-out;
-    margin-top: 3vh; /* Keep the top margin */
+    padding-top: 3vh;
+    padding-bottom: 4vh;
+    z-index: 100;
+    background-color: #EBDEF5;
 }
 
 
@@ -27,7 +30,7 @@
     text-decoration: none;
     color: black;
     display: flex;
-    flex-direction: row;  /* Maintain row for horizontal layout */
+    flex-direction: row; 
     gap: 1.2vmax;
     margin: 0;
     position: relative;

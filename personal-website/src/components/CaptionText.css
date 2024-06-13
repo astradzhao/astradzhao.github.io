@@ -1,0 +1,14 @@
+.caption-text {
+    padding-top: 15px;
+    color: white;
+    font-size: 1.25em;
+    line-height: 1.5;
+}
+
+.date-text {
+    padding-top: 5px;
+    color: white;
+    font-size: 0.9em;
+    line-height: 1.5;
+    font-style: italic;
+}
