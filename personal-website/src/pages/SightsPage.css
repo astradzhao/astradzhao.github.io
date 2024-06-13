@@ -10,14 +10,14 @@
 
 .image-page-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Four equal-width columns */
-    gap: 1.5vmax; /* Adjust the gap between the columns and rows as needed */
-    padding: 0; /* Adjust the padding around the grid as needed */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5vmax;
+    padding: 0;
     width: 85%;
 }
 
 .image-column {
     display: flex;
     flex-direction: column;
-    gap: 1.5vmax; /* Adjust the gap between the images in each column as needed */
+    gap: 1.5vmax;
 }

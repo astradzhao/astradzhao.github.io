@@ -19,7 +19,7 @@
     justify-content: center;
     transition: margin 0.5s ease-in-out;
     padding-top: 3vh;
-    padding-bottom: 4vh;
+    padding-bottom: 2vh;
     z-index: 100;
     background-color: #EBDEF5;
 }

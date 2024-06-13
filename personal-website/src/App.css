@@ -1,35 +1,35 @@
 html {
-  height: 100%;  /* Important to maintain full height */
-  overflow: hidden;  /* Enable scrolling */
+  height: 100%;
+  overflow: hidden;
 }
 
 body {
   margin: 0;
   padding: 0;
-  height: 100%;  /* Stretch the body to the full height of the viewport */
-  overflow: auto;  /* Prevent scrolling on the body to avoid double scroll bar */
-  background-color: #EBDEF0;  /* Set your background color */
-  scrollbar-width: none;  /* Hide scrollbar for Firefox */
-  -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
+  height: 100%;
+  overflow: auto;
+  background-color: #EBDEF0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-/* This is for Chrome, Safari, and other WebKit-based browsers */
+/* for Chrome, Safari */
 body::-webkit-scrollbar {
-  display: none;  /* This hides the scrollbar */
+  display: none; /* hides scrollbar */
 }
 
 .App {
   display: flex;
-  flex-direction: column; /* Stack items vertically */
-  align-items: center; /* Center items horizontally */
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  min-height: 100vh; /* Full viewport height */
-  background-color: #EBDEF5; /* Adjust the background color as needed */
+  min-height: 100vh;
+  background-color: #EBDEF5;
 }
 
 .main-content {
   margin-top: 5vh;
-  width: 100%; /* Use the full width */
+  width: 100%;
 }
 
 .App-logo {

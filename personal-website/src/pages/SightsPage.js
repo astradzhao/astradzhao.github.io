@@ -58,7 +58,6 @@ function SightsPage() {
                     height="31.5vmax"
                     x="-50%"
                 />
-                {/* Add more ImageTemplate components as needed */}
             </div>
             <div className='image-column'>
                 <ImageTemplate
