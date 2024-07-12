@@ -6,7 +6,8 @@ function ScriptsPage() {
     return (
       <div className='page-container'>
         <p className='page-header'>Consistency LLMs with Hao AI Lab</p>
-        <p className='page-text2'>I've just started working a bit with the Hao AI Lab at UCSD on the implementation Consistency Large Language models (
+        <p className='page-text2'>I've just started working a bit with <a href="https://snyhlxde1.github.io/" target="_blank" rel="noopener noreferrer" className="resume-link">Lanxiang Hu</a> and 
+        the Hao AI Lab at UCSD on the implementation Consistency Large Language models (
         <a href="https://github.com/hao-ai-lab/Consistency_LLM" target="_blank" rel="noopener noreferrer" className="resume-link">CLLMs</a>
         ), specifically in regards to optimizing its fine-tuning and testing its compatability with qLoRA.
         </p>
