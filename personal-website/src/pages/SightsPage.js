@@ -89,7 +89,7 @@ function SightsPage() {
                 gridArea="4 / 4 / 5 / 5"
             />
             <ImageTemplate
-                src={`${process.env.PUBLIC_URL}/files/images/muir_fences.png`}
+                src={`${process.env.PUBLIC_URL}/files/images/muir_bridge.png`}
                 caption="Forest Bridge"
                 date="July 28, 2024"
                 location="Muir Woods National Monument, California"
