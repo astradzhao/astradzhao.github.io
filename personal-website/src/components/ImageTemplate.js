@@ -2,7 +2,21 @@ import React, { useState } from 'react';
 import './ImageTemplate.css';
 import CaptionText from './CaptionText';
 
-function ImageTemplate({ src, alt, caption, date, width, height, x = '-50%', y = '-50%', zoom = 1 }) {
+function ImageTemplate({ 
+    src, 
+    alt, 
+    caption, 
+    date,
+    location, 
+    width = '100%', 
+    height, 
+    x = '-50%', 
+    y = '-50%', 
+    zoom = 1, 
+    gridArea,
+    translateX = '0px',
+    translateY = '0px'
+}) {
     const [popupVisible, setPopupVisible] = useState(false);
 
     const handleImageClick = () => {
@@ -16,13 +30,12 @@ function ImageTemplate({ src, alt, caption, date, width, height, x = '-50%', y =
     return (
         <>
             <div 
-                className='image-template' 
+                className='image-template'
                 style={{ 
-                    width: width, 
-                    height: height, 
-                    '--x': x, 
-                    '--y': y, 
-                    '--zoom': zoom 
+                    width, 
+                    height, 
+                    gridArea,
+                    transform: `translate(${translateX}, ${translateY})`
                 }} 
                 onClick={handleImageClick}
             >
@@ -31,6 +44,11 @@ function ImageTemplate({ src, alt, caption, date, width, height, x = '-50%', y =
                         src={src}
                         alt={alt}
                         className='image'
+                        style={{
+                            '--x': x,
+                            '--y': y,
+                            '--zoom': zoom
+                        }}
                     />
                 </div>
             </div>
@@ -39,7 +57,7 @@ function ImageTemplate({ src, alt, caption, date, width, height, x = '-50%', y =
                 <div className='popup-overlay' onClick={handleClosePopup}>
                     <div className='popup-content' onClick={(e) => e.stopPropagation()}>
                         <img src={src} alt={alt} className='popup-image' />
-                        <CaptionText text={caption} dateText={date}/>
+                        <CaptionText text={caption} dateText={date} location={location}/>
                     </div>
                 </div>
             )}

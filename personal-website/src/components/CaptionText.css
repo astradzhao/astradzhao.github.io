@@ -1,14 +1,53 @@
+.caption-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .caption-text {
     padding-top: 15px;
     color: white;
-    font-size: 1.25em;
+    font-size: 1.4em;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.metadata-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    padding-top: 10px;
+    width: 100%;
+}
+
+.location-text {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    color: white;
+    font-size: 0.82em;
     line-height: 1.5;
 }
 
-.date-text {
-    padding-top: 5px;
+.location-text-wrapper {
+    display: inline-flex;
+    align-items: center;
+}
+
+.location-text a {
     color: white;
-    font-size: 0.9em;
+    text-decoration: none;
+}
+
+.location-text a:hover {
+    text-decoration: underline;
+}
+
+.date-text {
+    color: white;
+    font-size: 0.82em;
     line-height: 1.5;
     font-style: italic;
+    text-align: center;
 }
