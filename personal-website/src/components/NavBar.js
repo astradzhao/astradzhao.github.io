@@ -67,7 +67,7 @@ function NavBar() {
     <div className='navbar-container'>
       <div className='navbar-links'>
         <NavLink to="/" style={nameStyle}>Daniel Zhao</NavLink>
-        {['me', 'sights', 'sounds', 'scripts'].map((linkName) => (
+        {['me', 'scripts', 'sights', 'sounds'].map((linkName) => (
           <NavLink 
             to={`/${linkName}`} 
             style={({ isActive }) => getLinkStyle(isActive, linkName)}
@@ -83,7 +83,7 @@ function NavBar() {
             <LinkedInIcon url={'https://www.linkedin.com/in/danzhao02/'} />
         </div>
         <div style={{ display: 'inline-block', margin: '0 0.25vw' }}>
-            <InstagramIcon url={'https://www.instagram.com/astradzhao/'} />
+            <InstagramIcon url={'https://www.instagram.com/astradphotos/'} />
         </div>
         <div style={{ display: 'inline-block', margin: '0 0.25vw' }}>
             <GitHubIcon url={'https://github.com/astradzhao'} />
