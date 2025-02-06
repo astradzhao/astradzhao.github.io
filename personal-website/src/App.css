@@ -8,7 +8,7 @@ body {
   padding: 0;
   height: 100%;
   overflow: auto;
-  background-color: #EBDEF0;
+  background-color: #FBF8FF;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
@@ -24,7 +24,7 @@ body::-webkit-scrollbar {
   align-items: center;
   text-align: center;
   min-height: 100vh;
-  background-color: #EBDEF5;
+  background-color: #FBF8FF;
 }
 
 .main-content {

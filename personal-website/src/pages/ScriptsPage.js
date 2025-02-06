@@ -4,11 +4,22 @@ import './ScriptsPage.css';
 
 function ScriptsPage() {
     return (
-      <div className='page-container'>
-        <p className='page-header'>MusicGen Consistency LLM</p>
-        <p className='page-text2'>Recently, I have been working on an implementation for MusicGen in conjunction with the CLLM Jacobi-generating
-          architecture, with the help of <a href="https://zacharynovack.github.io/" target="_blank" rel="noopener noreferrer" className="resume-link">Zachary Novack</a>.
-          Our goal is to make music-based LLM inference time a lot quicker, aiming for the seamless streaming of AI-generated music.
+      <div className='page-container-scrollable'>
+        <p className='page-header-small'>Towards Interpretable and Inference-Optimal CoT Reasoning with Sparse Autoencoder-Guided Generation</p>
+        <p className='page-text2'>A paper under submission review to an ICLR 2025 workshop: QUESTION. Draft{' '}
+        <a href={`${process.env.PUBLIC_URL}/files/pdfs/sae_iclr.pdf`} target="_blank" rel="noopener noreferrer" className="resume-link">
+          PDF
+        </a>.
+        </p>
+
+        <p className='page-header'>MusicGen SAE Interpretability</p>
+        <p className='page-text2'>Recently, I have been working on interpretability work for MusicGen with <a href="https://zacharynovack.github.io/" target="_blank" rel="noopener noreferrer" className="resume-link">Zachary Novack</a>!
+          Our goal is to develop a deeper understanding of interpretable latent features in music generation models.
+        </p>
+
+        <p className='page-header'>Learner App</p>
+        <p className='page-text2'>I'm currently working on an app that helps language learners improve vocabulary
+           retention and contextual understanding through an LLM-powered interactive translation practice tool! No code though, it's a secret 😸!
         </p>
 
         <p className='page-header'>Consistency LLMs with Hao AI Lab</p>
@@ -16,10 +27,6 @@ function ScriptsPage() {
         the Hao AI Lab at UCSD on the implementation of Consistency Large Language models (
         <a href="https://github.com/hao-ai-lab/Consistency_LLM" target="_blank" rel="noopener noreferrer" className="resume-link">CLLMs</a>
         ), specifically in regards to optimizing its fine-tuning and testing its compatability with qLoRA.
-        </p>
-
-        <p className='page-header'>Convolutional Neural Network</p>
-        <p className='page-text2'>A brief CNN project that I fully self-implemented a class at UC Berkeley can be found <a href="https://github.com/astradzhao/CNN" target="_blank" rel="noopener noreferrer" className="resume-link">here</a>.
         </p>
 
         <p className='page-header'>xv6-riscv OS</p>

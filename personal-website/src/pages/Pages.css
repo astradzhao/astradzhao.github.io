@@ -11,22 +11,45 @@
     margin-top: 6vh;
 }
 
+.page-container-scrollable {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: calc(100vh - 6vh);
+    margin: auto;
+    padding: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    text-align: left;
+    width: 75%;
+    margin-top: 6vh;
+}
+
 .page-text {
     font-size: 1.7vmax;
     margin-bottom: 0;
-    padding-bottom: 0.5vh;
+    padding-bottom: 0.3vh;
     text-align: left;
 }
 
 .page-text2 {
     font-size: 1.35vmax;
     margin-bottom: 0;
-    padding-bottom: 0.5vh;
+    padding-bottom: 0.3vh;
     text-align: left;
 }
 
 .page-header {
     font-size: 1.65vmax;
+    margin-bottom: 0;
+    padding-bottom: 0.5vh;
+    text-align: left;
+    text-decoration: underline;
+    font-style: italic;
+}
+
+.page-header-small {
+    font-size: 1.45vmax;
     margin-bottom: 0;
     padding-bottom: 0.5vh;
     text-align: left;
