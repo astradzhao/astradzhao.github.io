@@ -31,12 +31,21 @@
     color: black;
     display: flex;
     flex-direction: row; 
-    gap: 1.2vmax;
+    gap: 1.3vmax;
     margin: 0;
     position: relative;
     text-align: center;
     height: auto;
     align-items: flex-end;
+}
+
+.navbar-links a {
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+    display: inline-block;
+}
+
+.navbar-links a:hover {
+    transform: scale(1.1);
 }
 
 .name {
@@ -45,4 +54,12 @@
     cursor: pointer;
     margin-right: 3vw;
     margin-left: 0;
+}
+
+.social-icon {
+    transition: transform 0.2s ease-in-out;
+  }
+  
+.social-icon:hover {
+transform: scale(1.2);
 }

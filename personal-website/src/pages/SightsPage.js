@@ -11,7 +11,7 @@ function SightsPage() {
                 caption="The Southernmost Tip of the United States"
                 date="May 22, 2024"
                 location="Big Island, Hawaii"
-                height="20vmax"
+                height="16vmax"
                 gridArea="1 / 1 / 2 / 3"
                 zoom="2"
             />
@@ -20,7 +20,7 @@ function SightsPage() {
                 caption="Sunset"
                 date="May 22, 2024"
                 location="Big Island, Hawaii"
-                height="31.5vmax"
+                height="25.5vmax"
                 x="-25%"
                 zoom="1.5"
                 gridArea="1 / 3 / 3 / 4"
@@ -30,7 +30,7 @@ function SightsPage() {
                 caption="Fisherman"
                 date="November 3, 2023"
                 location="Busan (부산), South Korea"
-                height="20vmax"
+                height="16vmax"
                 gridArea="3 / 4 / 4 / 5"
             />
             <ImageTemplate
@@ -38,7 +38,7 @@ function SightsPage() {
                 caption="Red Alley"
                 date="December 20, 2023"
                 location="Tokyo, Japan"
-                height="41.5vmax"
+                height="33.5vmax"
                 zoom="1.5"
                 y="-55%"
                 gridArea="2 / 1 / 4 / 2"
@@ -48,9 +48,9 @@ function SightsPage() {
                 caption="Red Bridge"
                 date="October 1, 2023"
                 location="Sokcho (속초), South Korea"
-                height="30vmax"
+                height="24vmax"
                 x="-50%"
-                translateY='11.5vmax'
+                translateY='9.5vmax'
                 gridArea="2 / 3 / 4 / 4"
             />
             <ImageTemplate
@@ -58,7 +58,7 @@ function SightsPage() {
                 caption="Jagged Peaks"
                 date="October 2, 2023"
                 location="Seoraksan National Park, South Korea"
-                height="41.5vmax"
+                height="33.5vmax"
                 x="-62%"
                 y="-60%"
                 zoom="1.3"
@@ -69,7 +69,7 @@ function SightsPage() {
                 caption="Volcanic Crater"
                 date="May 21, 2024"
                 location="Big Island, Hawaii"
-                height="20vmax"
+                height="16vmax"
                 gridArea="3 / 2 / 4 / 3"
             />
             <ImageTemplate
@@ -77,7 +77,7 @@ function SightsPage() {
                 caption="Forest Bridge"
                 date="July 28, 2024"
                 location="Muir Woods National Monument, California"
-                height="20vmax"
+                height="16vmax"
                 zoom="1.6"
                 y="-65%"
                 gridArea="4 / 3 / 5 / 5"
@@ -87,7 +87,7 @@ function SightsPage() {
                 caption="Mist in the Woods"
                 date="July 28, 2024"
                 location="Muir Woods National Monument, California"
-                height="20vmax"
+                height="16vmax"
                 gridArea="2 / 2 / 3 / 3"
             />
             <ImageTemplate
@@ -95,7 +95,7 @@ function SightsPage() {
                 caption="Apartment View"
                 date="August 26, 2024"
                 location="San Francisco, California"
-                height="20vmax"
+                height="16vmax"
                 zoom="1.6"
                 y="-65%"
                 x="-45%"

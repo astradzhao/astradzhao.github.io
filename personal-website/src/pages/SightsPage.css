@@ -10,8 +10,9 @@
 .image-page-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: minmax(20vmax, auto);
+    grid-auto-rows: minmax(16vmax, auto);
     gap: 1.5vmax;
     padding: 0;
-    width: 85%;
+    width: 70%;
+
 }

@@ -7,22 +7,22 @@
     padding: 0;
     overflow: auto;
     text-align: left;
-    width: 75%;
+    width: 70%;
     margin-top: 6vh;
 }
 
-.page-container-scrollable {
+.page-container-scripts{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    height: calc(100vh - 6vh);
-    margin: auto;
+    margin: 6vh auto 0 auto;  /* Combined margin-top with margin: auto */
     padding: 0;
     overflow-y: auto;
     overflow-x: hidden;
     text-align: left;
-    width: 75%;
-    margin-top: 6vh;
+    width: 70%;
+    min-height: fit-content;  /* Let it grow with content */
+    padding-bottom: 5vh;
 }
 
 .page-text {
@@ -39,20 +39,33 @@
     text-align: left;
 }
 
+.page-text3 {
+    font-size: 1.25vmax;
+    margin-bottom: 0;
+    padding-bottom: 0.3vh;
+    text-align: left;
+}
+
 .page-header {
     font-size: 1.65vmax;
     margin-bottom: 0;
     padding-bottom: 0.5vh;
     text-align: left;
     text-decoration: underline;
-    font-style: italic;
 }
 
 .page-header-small {
-    font-size: 1.45vmax;
+    font-size: 1.4vmax;
     margin-bottom: 0;
     padding-bottom: 0.5vh;
     text-align: left;
     text-decoration: underline;
-    font-style: italic;
+}
+
+.page-header-smallest {
+    font-size: 1.4vmax;
+    margin-bottom: 0;
+    padding-bottom: 0.5vh;
+    text-align: left;
+    text-decoration: underline;
 }
