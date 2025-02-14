@@ -1,0 +1,19 @@
+.home-content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 3vw;
+    padding-top: 3vh;
+  }
+  
+  .profile-image {
+    width: 15vw;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .text-content {
+    flex: 1;
+    padding-top: 0vmax;
+  }

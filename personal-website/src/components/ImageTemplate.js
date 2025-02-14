@@ -54,12 +54,17 @@ function ImageTemplate({
             </div>
 
             {popupVisible && (
-                <div className='popup-overlay' onClick={handleClosePopup}>
-                    <div className='popup-content' onClick={(e) => e.stopPropagation()}>
-                        <img src={src} alt={alt} className='popup-image' />
-                        <CaptionText text={caption} dateText={date} location={location}/>
+                <>
+                    <button className="close-button" onClick={handleClosePopup}>
+                        close
+                    </button>
+                    <div className='popup-overlay'>
+                        <div className='popup-content' onClick={(e) => e.stopPropagation()}>
+                            <img src={src} alt={alt} className='popup-image' />
+                            <CaptionText text={caption} dateText={date} location={location}/>
+                        </div>
                     </div>
-                </div>
+                </>
             )}
         </>
     );

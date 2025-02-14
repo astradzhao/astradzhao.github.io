@@ -15,57 +15,65 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    margin: 6vh auto 0 auto;  /* Combined margin-top with margin: auto */
+    margin: 6vh auto 0 auto;
     padding: 0;
     overflow-y: auto;
     overflow-x: hidden;
     text-align: left;
     width: 70%;
-    min-height: fit-content;  /* Let it grow with content */
+    min-height: fit-content; 
     padding-bottom: 5vh;
 }
 
 .page-text {
-    font-size: 1.7vmax;
+    font-size: 1.75rem;
     margin-bottom: 0;
     padding-bottom: 0.3vh;
     text-align: left;
+    font-weight: 300;
 }
 
 .page-text2 {
-    font-size: 1.35vmax;
+    font-size: 1.4rem;
     margin-bottom: 0;
-    padding-bottom: 0.3vh;
     text-align: left;
+    font-weight: 200;
 }
 
 .page-text3 {
-    font-size: 1.25vmax;
+    font-size: 1.1rem;
+    padding-top: 0;
+    margin-top: 1vh;
     margin-bottom: 0;
-    padding-bottom: 0.3vh;
     text-align: left;
+    font-weight: 200;
 }
 
 .page-header {
-    font-size: 1.65vmax;
+    font-size: 1.8rem;
     margin-bottom: 0;
-    padding-bottom: 0.5vh;
     text-align: left;
     text-decoration: underline;
+    font-style: italic;
+    font-weight: 400;
 }
 
 .page-header-small {
-    font-size: 1.4vmax;
+    font-size: 1.45rem;
     margin-bottom: 0;
-    padding-bottom: 0.5vh;
+    padding-bottom: 0;
+    margin-top: 4vh;
     text-align: left;
     text-decoration: underline;
+    font-style: italic;
+    font-weight: 400;
 }
 
 .page-header-smallest {
-    font-size: 1.25vmax;
+    font-size: 1.3rem;
     margin-bottom: 0;
-    padding-bottom: 0.5vh;
     text-align: left;
     text-decoration: underline;
+    font-style: italic;
+    font-weight: 400;
 }
