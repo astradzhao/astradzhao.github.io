@@ -18,13 +18,16 @@ function ImageTemplate({
     translateY = '0px'
 }) {
     const [popupVisible, setPopupVisible] = useState(false);
+    const [isVisible, setIsVisible] = useState(false);
 
     const handleImageClick = () => {
         setPopupVisible(true);
+        setTimeout(() => setIsVisible(true), 50);
     };
 
     const handleClosePopup = () => {
-        setPopupVisible(false);
+        setIsVisible(false);
+        setTimeout(() => setPopupVisible(false), 300);
     };
 
     return (
@@ -55,11 +58,11 @@ function ImageTemplate({
 
             {popupVisible && (
                 <>
-                    <button className="close-button" onClick={handleClosePopup}>
+                    <button className={`close-button ${isVisible ? 'visible' : ''}`} onClick={handleClosePopup}>
                         close
                     </button>
-                    <div className='popup-overlay'>
-                        <div className='popup-content' onClick={(e) => e.stopPropagation()}>
+                    <div className={`popup-overlay ${isVisible ? 'visible' : ''}`}>
+                        <div className={`popup-content ${isVisible ? 'visible' : ''}`} onClick={(e) => e.stopPropagation()}>
                             <img src={src} alt={alt} className='popup-image' />
                             <CaptionText text={caption} dateText={date} location={location}/>
                         </div>

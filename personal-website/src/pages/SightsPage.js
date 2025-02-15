@@ -65,10 +65,11 @@ function SightsPage() {
                 gridArea="1 / 4 / 4 / 5"
             />
             <ImageTemplate
-                src={`${process.env.PUBLIC_URL}/files/images/hawaii_volcano.png`}
-                caption="Volcanic Crater"
-                date="May 21, 2024"
-                location="Big Island, Hawaii"
+                src={`${process.env.PUBLIC_URL}/files/images/shanghai_cat.png`}
+                caption="White Kitten"
+                date="September 22, 2024"
+                location="Shanghai (上海), China"
+                zoom="1.6"
                 height="16vmax"
                 gridArea="3 / 2 / 4 / 3"
             />
@@ -100,6 +101,38 @@ function SightsPage() {
                 y="-65%"
                 x="-45%"
                 gridArea="4 / 1 / 5 / 3"
+            />
+            <ImageTemplate
+                src={`${process.env.PUBLIC_URL}/files/images/hawaii_volcano.png`}
+                caption="Volcanic Crater"
+                date="May 21, 2024"
+                location="Big Island, Hawaii"
+                height="16vmax"
+                gridArea="5 / 1 / 6 / 2"
+                y="-45%"
+                zoom="1.6"
+            />
+            <ImageTemplate
+                src={`${process.env.PUBLIC_URL}/files/images/sd_beach.png`}
+                caption="Lifeguard 30"
+                date="September 5, 2024"
+                location="La Jolla Shores, San Diego, California"
+                height="16vmax"
+                gridArea="5 / 2 / 6 / 4"
+                zoom="1.6"
+                x="-60%"
+                y="-65%"
+            />
+            <ImageTemplate
+                src={`${process.env.PUBLIC_URL}/files/images/hangzhou_boat.png`}
+                caption="西湖小船 (West Lake Boat)"
+                date="September 21, 2024"
+                location="West Lake (西湖), Hangzhou (杭州), China"
+                height="16vmax"
+                gridArea="5 / 4 / 6 / 5"
+                zoom="1.2"
+                y="-55%"
+                x="-60%"
             />
         </div>
       </div>
