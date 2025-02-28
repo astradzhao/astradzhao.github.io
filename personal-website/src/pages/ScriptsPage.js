@@ -6,7 +6,7 @@ function ScriptsPage() {
     return (
       <div className='page-container-scripts'>
         <p className='page-header-small'>Towards Interpretable and Inference-Optimal CoT Reasoning with Sparse Autoencoder-Guided Generation</p>
-        <p className='page-text3'>A paper under submission review to an ICLR 2025 workshop: QUESTION. Draft{' '}
+        <p className='page-text3'>Short paper on SAE-guided reasoning. Draft{' '}
         <a href={`${process.env.PUBLIC_URL}/files/pdfs/sae_iclr.pdf`} target="_blank" rel="noopener noreferrer" className="resume-link">
           PDF
         </a>.
