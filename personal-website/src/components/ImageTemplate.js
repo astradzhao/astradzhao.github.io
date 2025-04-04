@@ -97,12 +97,12 @@ function ImageTemplate({
 
             {popupVisible && (
                 <>
-                    <button className={`close-button ${isVisible ? 'visible' : ''}`} onClick={handleClosePopup}>
-                        close
-                    </button>
                     <div className={`popup-overlay ${isVisible ? 'visible' : ''}`}>
                         <div className={`popup-content ${isVisible ? 'visible' : ''}`} onClick={(e) => e.stopPropagation()}>
                             {/* Full resolution image loaded only after click */}
+                            <button className={`close-button ${isVisible ? 'visible' : ''}`} onClick={handleClosePopup}>
+                                close
+                            </button>
                             <img src={src} alt={alt} className='popup-image' />
                             <CaptionText text={caption} dateText={date} location={location}/>
                         </div>
