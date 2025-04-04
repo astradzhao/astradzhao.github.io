@@ -120,3 +120,15 @@
         margin-bottom: 0.5vh;
     }
 }
+
+.image-placeholder {
+    background-color: #f0f0f0;
+    width: 100%;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 0.8; }
+    100% { opacity: 0.6; }
+}
