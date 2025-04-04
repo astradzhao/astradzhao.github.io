@@ -8,6 +8,7 @@ function SightsPage() {
         <div className='image-page-container'>
             <ImageTemplate
                 src={`${process.env.PUBLIC_URL}/files/images/hawaii_south.png`}
+                thumbSrc={`${process.env.PUBLIC_URL}/files/images_mini/hawaii_south.png`}
                 caption="The Southernmost Tip of the United States"
                 date="May 22, 2024"
                 location="Big Island, Hawaii"
@@ -17,6 +18,7 @@ function SightsPage() {
             />
             <ImageTemplate
                 src={`${process.env.PUBLIC_URL}/files/images/hawaii_sunset.png`}
+                thumbSrc={`${process.env.PUBLIC_URL}/files/images_mini/hawaii_sunset.png`}
                 caption="Sunset"
                 date="May 22, 2024"
                 location="Big Island, Hawaii"
@@ -27,6 +29,7 @@ function SightsPage() {
             />
             <ImageTemplate
                 src={`${process.env.PUBLIC_URL}/files/images/busan_fisherman.png`}
+                thumbSrc={`${process.env.PUBLIC_URL}/files/images_mini/busan_fisherman.png`}
                 caption="Fisherman"
                 date="November 3, 2023"
                 location="Busan (부산), South Korea"
@@ -35,6 +38,7 @@ function SightsPage() {
             />
             <ImageTemplate
                 src={`${process.env.PUBLIC_URL}/files/images/tokyo_red_alley.png`}
+                thumbSrc={`${process.env.PUBLIC_URL}/files/images_mini/tokyo_red_alley.png`}
                 caption="Red Alley"
                 date="December 20, 2023"
                 location="Tokyo, Japan"
@@ -45,6 +49,7 @@ function SightsPage() {
             />
             <ImageTemplate
                 src={`${process.env.PUBLIC_URL}/files/images/sokcho_bridge.png`}
+                thumbSrc={`${process.env.PUBLIC_URL}/files/images_mini/sokcho_bridge.png`}
                 caption="Red Bridge"
                 date="October 1, 2023"
                 location="Sokcho (속초), South Korea"
@@ -55,6 +60,7 @@ function SightsPage() {
             />
             <ImageTemplate
                 src={`${process.env.PUBLIC_URL}/files/images/seoraksan_park.png`}
+                thumbSrc={`${process.env.PUBLIC_URL}/files/images_mini/seoraksan_park.png`}
                 caption="Jagged Peaks"
                 date="October 2, 2023"
                 location="Seoraksan National Park, South Korea"
@@ -66,6 +72,7 @@ function SightsPage() {
             />
             <ImageTemplate
                 src={`${process.env.PUBLIC_URL}/files/images/shanghai_cat.png`}
+                thumbSrc={`${process.env.PUBLIC_URL}/files/images_mini/shanghai_cat.png`}
                 caption="White Kitten"
                 date="September 22, 2024"
                 location="Shanghai (上海), China"
@@ -75,6 +82,7 @@ function SightsPage() {
             />
             <ImageTemplate
                 src={`${process.env.PUBLIC_URL}/files/images/muir_bridge.png`}
+                thumbSrc={`${process.env.PUBLIC_URL}/files/images_mini/muir_bridge.png`}
                 caption="Forest Bridge"
                 date="July 28, 2024"
                 location="Muir Woods National Monument, California"
@@ -85,6 +93,7 @@ function SightsPage() {
             />
             <ImageTemplate
                 src={`${process.env.PUBLIC_URL}/files/images/muir_trees.png`}
+                thumbSrc={`${process.env.PUBLIC_URL}/files/images_mini/muir_trees.png`}
                 caption="Mist in the Woods"
                 date="July 28, 2024"
                 location="Muir Woods National Monument, California"
@@ -93,6 +102,7 @@ function SightsPage() {
             />
             <ImageTemplate
                 src={`${process.env.PUBLIC_URL}/files/images/sf_airbnb.png`}
+                thumbSrc={`${process.env.PUBLIC_URL}/files/images_mini/sf_airbnb.png`}
                 caption="Apartment View"
                 date="August 26, 2024"
                 location="San Francisco, California"
@@ -104,6 +114,7 @@ function SightsPage() {
             />
             <ImageTemplate
                 src={`${process.env.PUBLIC_URL}/files/images/hawaii_volcano.png`}
+                thumbSrc={`${process.env.PUBLIC_URL}/files/images_mini/hawaii_volcano.png`}
                 caption="Volcanic Crater"
                 date="May 21, 2024"
                 location="Big Island, Hawaii"
@@ -114,6 +125,7 @@ function SightsPage() {
             />
             <ImageTemplate
                 src={`${process.env.PUBLIC_URL}/files/images/sd_beach.png`}
+                thumbSrc={`${process.env.PUBLIC_URL}/files/images_mini/sd_beach.png`}
                 caption="Lifeguard 30"
                 date="September 5, 2024"
                 location="La Jolla Shores, San Diego, California"
@@ -125,6 +137,7 @@ function SightsPage() {
             />
             <ImageTemplate
                 src={`${process.env.PUBLIC_URL}/files/images/hangzhou_boat.png`}
+                thumbSrc={`${process.env.PUBLIC_URL}/files/images_mini/hangzhou_boat.png`}
                 caption="西湖小船 (West Lake Boat)"
                 date="September 21, 2024"
                 location="West Lake (西湖), Hangzhou (杭州), China"

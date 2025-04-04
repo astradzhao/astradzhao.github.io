@@ -1,27 +1,46 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './ImageTemplate.css';
 import CaptionText from './CaptionText';
 
-// Create a shared IntersectionObserver instance outside the component
-const observer = new IntersectionObserver(
-    (entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const component = entry.target.__component;
-                if (component) {
-                    component.handleIntersection();
-                }
-            }
-        });
-    },
-    { 
-        threshold: 0.1,
-        rootMargin: '100px'
+// A simple LazyImage component using Intersection Observer
+function LazyImage({ src, alt, className, style }) {
+  const [isInView, setIsInView] = useState(false);
+  const imgRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          observer.disconnect();
+        }
+      });
+    });
+    if (imgRef.current) {
+      observer.observe(imgRef.current);
     }
-);
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  // Render an empty src until the image is in view
+  return (
+    <img
+      ref={imgRef}
+      src={isInView ? src : ''}
+      alt={alt}
+      className={className}
+      style={style}
+      // fallback to browser's native lazy loading (optional)
+      loading="lazy"
+    />
+  );
+}
 
 function ImageTemplate({ 
-    src, 
+    src,         // Full resolution image for the popup
+    thumbSrc,    // Low resolution image for the initial grid view
     alt, 
     caption, 
     date,
@@ -37,62 +56,17 @@ function ImageTemplate({
 }) {
     const [popupVisible, setPopupVisible] = useState(false);
     const [isVisible, setIsVisible] = useState(false);
-    const [isLoaded, setIsLoaded] = useState(false);
-    const imageRef = React.useRef(null);
-    const componentRef = React.useRef({ handleIntersection: () => setIsLoaded(true) });
 
-    // Optimized intersection observer setup
-    useEffect(() => {
-        const currentRef = imageRef.current;
-        if (currentRef) {
-            currentRef.__component = componentRef.current;
-            observer.observe(currentRef);
-        }
-
-        return () => {
-            if (currentRef) {
-                currentRef.__component = null;
-                observer.unobserve(currentRef);
-            }
-        };
-    }, []);
-
-    // Simplified popup handlers
-    const handleImageClick = React.useCallback(() => {
+    const handleImageClick = () => {
+        // Only load the full-res image when the user clicks.
         setPopupVisible(true);
-        requestAnimationFrame(() => setIsVisible(true));
-    }, []);
+        setTimeout(() => setIsVisible(true), 50);
+    };
 
-    const handleClosePopup = React.useCallback(() => {
+    const handleClosePopup = () => {
         setIsVisible(false);
         setTimeout(() => setPopupVisible(false), 300);
-    }, []);
-
-    // Memoize the main content to prevent unnecessary re-renders
-    const mainContent = React.useMemo(() => (
-        <div className='image-wrapper'>
-            {isLoaded ? (
-                <img
-                    src={src}
-                    alt={alt}
-                    className='image'
-                    loading="lazy"
-                    decoding="async"
-                    style={{
-                        '--x': x,
-                        '--y': y,
-                        '--zoom': zoom
-                    }}
-                />
-            ) : (
-                <div 
-                    ref={imageRef}
-                    className="image-placeholder"
-                    style={{ height: height }}
-                />
-            )}
-        </div>
-    ), [isLoaded, src, alt, x, y, zoom, height]);
+    };
 
     return (
         <>
@@ -106,49 +80,37 @@ function ImageTemplate({
                 }} 
                 onClick={handleImageClick}
             >
-                {mainContent}
+                <div className='image-wrapper'>
+                    {/* Use the LazyImage component for lazy loading the thumbnail */}
+                    <LazyImage
+                        src={thumbSrc ? thumbSrc : src}
+                        alt={alt}
+                        className='image'
+                        style={{
+                            '--x': x,
+                            '--y': y,
+                            '--zoom': zoom
+                        }}
+                    />
+                </div>
             </div>
 
             {popupVisible && (
-                <div 
-                    className={`popup-overlay ${isVisible ? 'visible' : ''}`}
-                    onClick={handleClosePopup}
-                >
-                    <div 
-                        className={`popup-content ${isVisible ? 'visible' : ''}`} 
-                        onClick={(e) => e.stopPropagation()}
-                    >
-                        <button 
-                            className={`close-button ${isVisible ? 'visible' : ''}`} 
-                            onClick={handleClosePopup}
-                        >
-                            close
-                        </button>
-                        {isVisible && (
-                            <>
-                                <img 
-                                    src={src} 
-                                    alt={alt} 
-                                    className='popup-image'
-                                    loading="lazy"
-                                    decoding="async"
-                                />
-                                <CaptionText 
-                                    text={caption} 
-                                    dateText={date} 
-                                    location={location}
-                                />
-                            </>
-                        )}
+                <>
+                    <button className={`close-button ${isVisible ? 'visible' : ''}`} onClick={handleClosePopup}>
+                        close
+                    </button>
+                    <div className={`popup-overlay ${isVisible ? 'visible' : ''}`}>
+                        <div className={`popup-content ${isVisible ? 'visible' : ''}`} onClick={(e) => e.stopPropagation()}>
+                            {/* Full resolution image loaded only after click */}
+                            <img src={src} alt={alt} className='popup-image' />
+                            <CaptionText text={caption} dateText={date} location={location}/>
+                        </div>
                     </div>
-                </div>
+                </>
             )}
         </>
     );
 }
 
-// Wrap in memo with a custom comparison function
-export default React.memo(ImageTemplate, (prevProps, nextProps) => {
-    return prevProps.src === nextProps.src && 
-           prevProps.gridArea === nextProps.gridArea;
-});
+export default ImageTemplate;
