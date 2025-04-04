@@ -2,6 +2,24 @@ import React, { useState, useEffect } from 'react';
 import './ImageTemplate.css';
 import CaptionText from './CaptionText';
 
+// Create a shared IntersectionObserver instance outside the component
+const observer = new IntersectionObserver(
+    (entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const component = entry.target.__component;
+                if (component) {
+                    component.handleIntersection();
+                }
+            }
+        });
+    },
+    { 
+        threshold: 0.1,
+        rootMargin: '100px'
+    }
+);
+
 function ImageTemplate({ 
     src, 
     alt, 
@@ -21,46 +39,60 @@ function ImageTemplate({
     const [isVisible, setIsVisible] = useState(false);
     const [isLoaded, setIsLoaded] = useState(false);
     const imageRef = React.useRef(null);
+    const componentRef = React.useRef({ handleIntersection: () => setIsLoaded(true) });
 
-    // Optimized intersection observer
+    // Optimized intersection observer setup
     useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setIsLoaded(true);
-                    observer.disconnect();
-                }
-            },
-            { 
-                threshold: 0.1,
-                rootMargin: '50px' // Preload images slightly before they enter viewport
-            }
-        );
-
-        if (imageRef.current) {
-            observer.observe(imageRef.current);
+        const currentRef = imageRef.current;
+        if (currentRef) {
+            currentRef.__component = componentRef.current;
+            observer.observe(currentRef);
         }
 
-        return () => observer.disconnect();
+        return () => {
+            if (currentRef) {
+                currentRef.__component = null;
+                observer.unobserve(currentRef);
+            }
+        };
     }, []);
 
-    // Remove the separate preload effect and combine it
-    const handleImageLoad = React.useCallback(() => {
-        if (!popupVisible) {
-            const preloadImage = new Image();
-            preloadImage.src = src;
-        }
-    }, [src, popupVisible]);
-
-    const handleImageClick = () => {
+    // Simplified popup handlers
+    const handleImageClick = React.useCallback(() => {
         setPopupVisible(true);
-        setTimeout(() => setIsVisible(true), 50);
-    };
+        requestAnimationFrame(() => setIsVisible(true));
+    }, []);
 
-    const handleClosePopup = () => {
+    const handleClosePopup = React.useCallback(() => {
         setIsVisible(false);
         setTimeout(() => setPopupVisible(false), 300);
-    };
+    }, []);
+
+    // Memoize the main content to prevent unnecessary re-renders
+    const mainContent = React.useMemo(() => (
+        <div className='image-wrapper'>
+            {isLoaded ? (
+                <img
+                    src={src}
+                    alt={alt}
+                    className='image'
+                    loading="lazy"
+                    decoding="async"
+                    style={{
+                        '--x': x,
+                        '--y': y,
+                        '--zoom': zoom
+                    }}
+                />
+            ) : (
+                <div 
+                    ref={imageRef}
+                    className="image-placeholder"
+                    style={{ height: height }}
+                />
+            )}
+        </div>
+    ), [isLoaded, src, alt, x, y, zoom, height]);
 
     return (
         <>
@@ -74,27 +106,7 @@ function ImageTemplate({
                 }} 
                 onClick={handleImageClick}
             >
-                <div className='image-wrapper'>
-                    {isLoaded ? (
-                        <img
-                            src={src}
-                            alt={alt}
-                            className='image'
-                            onLoad={handleImageLoad}
-                            style={{
-                                '--x': x,
-                                '--y': y,
-                                '--zoom': zoom
-                            }}
-                        />
-                    ) : (
-                        <div 
-                            ref={imageRef}
-                            className="image-placeholder"
-                            style={{ height: height }}
-                        />
-                    )}
-                </div>
+                {mainContent}
             </div>
 
             {popupVisible && (
@@ -112,16 +124,22 @@ function ImageTemplate({
                         >
                             close
                         </button>
-                        <img 
-                            src={src} 
-                            alt={alt} 
-                            className='popup-image'
-                        />
-                        <CaptionText 
-                            text={caption} 
-                            dateText={date} 
-                            location={location}
-                        />
+                        {isVisible && (
+                            <>
+                                <img 
+                                    src={src} 
+                                    alt={alt} 
+                                    className='popup-image'
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+                                <CaptionText 
+                                    text={caption} 
+                                    dateText={date} 
+                                    location={location}
+                                />
+                            </>
+                        )}
                     </div>
                 </div>
             )}
@@ -129,4 +147,8 @@ function ImageTemplate({
     );
 }
 
-export default React.memo(ImageTemplate);
+// Wrap in memo with a custom comparison function
+export default React.memo(ImageTemplate, (prevProps, nextProps) => {
+    return prevProps.src === nextProps.src && 
+           prevProps.gridArea === nextProps.gridArea;
+});
