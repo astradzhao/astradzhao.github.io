@@ -50,6 +50,7 @@
 }
 
 .popup-content {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -75,21 +76,22 @@
 
 .close-button {
     position: absolute;
-    top: 30px;
+    bottom: 100%;
     left: 50%;
     transform: translateX(-50%);
+    margin-bottom: 0.5vh;
     background: transparent;
     color: #FBF8FF;
     border: none;
-    padding: 24px 32px;
-    font-size: 18px;
+    padding: 2vh 2.5vmin;
+    font-size: 2vmin;
     font-weight: 400;
-    letter-spacing: 1px;
+    letter-spacing: 0.1vmin;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 0.8vmin;
     z-index: 1001;
     opacity: 0;
     transition: all 0.3s ease;
@@ -102,4 +104,19 @@
 .close-button:hover {
     color: rgba(251, 248, 255, 0.7);
     transform: translateX(-50%) translateY(-2px);
+}
+
+@media screen and (max-width: 768px) {
+    .popup-content {
+        max-width: 90%;
+    }
+
+    .close-button {
+        font-size: 3vmin;
+        padding: 1.5vmin 2vmin;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-bottom: 0.5vh;
+    }
 }

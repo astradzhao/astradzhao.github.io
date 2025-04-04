@@ -14,5 +14,11 @@
     gap: 1.5vmax;
     padding: 0;
     width: 70%;
+}
 
+@media screen and (max-width: 768px) {
+    .image-page-container {
+        width: 90%;
+        margin-top: -5vh;
+    }
 }

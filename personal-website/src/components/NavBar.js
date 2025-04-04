@@ -73,29 +73,35 @@ function NavBar() {
   });
 
   return (
-    <div className='navbar-container'>
-      <div className='navbar-links'>
-        <NavLink to="/" style={nameStyle}>Daniel Zhao</NavLink>
-        {['me', 'scripts', 'sights', 'sounds'].map((linkName) => (
-          <NavLink 
-            to={`/${linkName}`} 
-            style={({ isActive }) => getLinkStyle(isActive, linkName)}
-            onMouseEnter={() => handleMouseEnter(linkName)} 
-            onMouseLeave={handleMouseLeave}
-          >
-            {linkName.charAt(0).toUpperCase() + linkName.slice(1)}
-          </NavLink>
-        ))}
-      </div>
-      <div style={{ marginRight: '0', marginLeft: '15vw', marginTop: '2.5vh', marginBottom: '-0.5vh', position: 'relative', textAlign: 'right' }}>
-        <div style={{ display: 'inline-block', margin: '0 0.25vw' }}>
+    <div className='navbar'>
+      <div className='navbar-container'>
+        <div className='navbar-links'>
+          <NavLink to="/" style={nameStyle}>Daniel Zhao</NavLink>
+          {['me', 'scripts', 'sights', 'sounds'].map((linkName) => (
+            <NavLink 
+              key={linkName}
+              to={`/${linkName}`} 
+              style={({ isActive }) => getLinkStyle(isActive, linkName)}
+              onMouseEnter={() => handleMouseEnter(linkName)} 
+              onMouseLeave={handleMouseLeave}
+            >
+              {linkName.charAt(0).toUpperCase() + linkName.slice(1)}
+            </NavLink>
+          ))}
+        </div>
+        <div className="desktop-only">
+          <div className="social-icons">
             <LinkedInIcon url={'https://www.linkedin.com/in/danzhao02/'} />
-        </div>
-        <div style={{ display: 'inline-block', margin: '0 0.25vw' }}>
             <InstagramIcon url={'https://www.instagram.com/astradphotos/'} />
-        </div>
-        <div style={{ display: 'inline-block', margin: '0 0.25vw' }}>
             <GitHubIcon url={'https://github.com/astradzhao'} />
+          </div>
+        </div>
+      </div>
+      <div className="mobile-only">
+        <div className="social-icons">
+          <LinkedInIcon url={'https://www.linkedin.com/in/danzhao02/'} />
+          <InstagramIcon url={'https://www.instagram.com/astradphotos/'} />
+          <GitHubIcon url={'https://github.com/astradzhao'} />
         </div>
       </div>
     </div>

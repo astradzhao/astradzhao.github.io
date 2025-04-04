@@ -5,16 +5,17 @@ import './ScriptsPage.css';
 function ScriptsPage() {
     return (
       <div className='page-container-scripts'>
-        <p className='page-header-small'>Towards Interpretable and Inference-Optimal CoT Reasoning with Sparse Autoencoder-Guided Generation</p>
-        <p className='page-text3'>A paper under submission review to an ICLR 2025 workshop: QUESTION. Draft{' '}
+        <p className='page-header-small'>MusicRFM</p>
+        <p className='page-text3'>Recently, I have been working on guided music generation, utilizing recursive feature machines (RFMs) with <a href="https://zacharynovack.github.io/" target="_blank" rel="noopener noreferrer" className="resume-link">Zachary Novack </a>
+        and <a href="https://cseweb.ucsd.edu/~tberg/" target="_blank" rel="noopener noreferrer" className="resume-link">Prof. Taylor Berg-Kirkpatrick</a>!
+          Our goal is to develop a way to guide music generation towards more interpretable outputs.
+        </p>
+
+        <p className='page-header-small'>CoT Reasoning with Sparse Autoencoder-Guided Generation</p>
+        <p className='page-text3'>First paper, on generating better chain-of-thought reasoning with clustering and sparse autoencoders! Draft{' '}
         <a href={`${process.env.PUBLIC_URL}/files/pdfs/sae_iclr.pdf`} target="_blank" rel="noopener noreferrer" className="resume-link">
           PDF
         </a>.
-        </p>
-
-        <p className='page-header-small'>MusicGen SAE Interpretability</p>
-        <p className='page-text3'>Recently, I have been working on interpretability work for MusicGen with <a href="https://zacharynovack.github.io/" target="_blank" rel="noopener noreferrer" className="resume-link">Zachary Novack</a>!
-          Our goal is to develop a deeper understanding of interpretable latent features in music generation models.
         </p>
 
         <p className='page-header-small'>Learner App</p>
@@ -27,6 +28,10 @@ function ScriptsPage() {
         the Hao AI Lab at UCSD on the implementation of Consistency Large Language models (
         <a href="https://github.com/hao-ai-lab/Consistency_LLM" target="_blank" rel="noopener noreferrer" className="resume-link">CLLMs</a>
         ), specifically in regards to optimizing its fine-tuning and testing its compatability with qLoRA.
+        </p>
+
+        <p className='page-header-small'>MancalaBot</p>
+        <p className='page-text3'>For a course final project (CSE 251B: Deep Learning) at UCSD, my team implemented a <a href="https://github.com/PlayerEugene/cse151b251b-wi25-pa5-teamteam" target="_blank" rel="noopener noreferrer" className="resume-link">Mancala bot</a> using MCTS, AlphaZero-esque training, and a custom policy network. 
         </p>
 
         <p className='page-header-small'>xv6-riscv OS</p>

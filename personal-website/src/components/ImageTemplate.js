@@ -57,17 +57,15 @@ function ImageTemplate({
             </div>
 
             {popupVisible && (
-                <>
-                    <button className={`close-button ${isVisible ? 'visible' : ''}`} onClick={handleClosePopup}>
-                        close
-                    </button>
-                    <div className={`popup-overlay ${isVisible ? 'visible' : ''}`}>
-                        <div className={`popup-content ${isVisible ? 'visible' : ''}`} onClick={(e) => e.stopPropagation()}>
-                            <img src={src} alt={alt} className='popup-image' />
-                            <CaptionText text={caption} dateText={date} location={location}/>
-                        </div>
+                <div className={`popup-overlay ${isVisible ? 'visible' : ''}`}>
+                    <div className={`popup-content ${isVisible ? 'visible' : ''}`} onClick={(e) => e.stopPropagation()}>
+                        <button className={`close-button ${isVisible ? 'visible' : ''}`} onClick={handleClosePopup}>
+                            close
+                        </button>
+                        <img src={src} alt={alt} className='popup-image' />
+                        <CaptionText text={caption} dateText={date} location={location}/>
                     </div>
-                </>
+                </div>
             )}
         </>
     );
