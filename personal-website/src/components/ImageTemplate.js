@@ -44,7 +44,8 @@ function ImageTemplate({
     alt, 
     caption, 
     date,
-    location, 
+    location,
+    locationQuery,
     width = '100%', 
     height, 
     x = '-50%', 
@@ -104,7 +105,7 @@ function ImageTemplate({
                                 close
                             </button>
                             <img src={src} alt={alt} className='popup-image' />
-                            <CaptionText text={caption} dateText={date} location={location}/>
+                            <CaptionText text={caption} dateText={date} location={location} locationQuery={locationQuery}/>
                         </div>
                     </div>
                 </>

@@ -60,7 +60,7 @@
 
     .mobile-only {
         display: flex !important;
-        position: absolute;
+        position: absolute !important;
         bottom: -100vh;
         right: -35vw;
         width: 100%;

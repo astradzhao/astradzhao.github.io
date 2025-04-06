@@ -1,9 +1,9 @@
 import React from 'react';
 import './CaptionText.css';
 
-function CaptionText({ text, dateText, location }) {
+function CaptionText({ text, dateText, location, locationQuery}) {
     const googleMapsUrl = location 
-        ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location)}`
+        ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(locationQuery)}`
         : null;
 
     return (
