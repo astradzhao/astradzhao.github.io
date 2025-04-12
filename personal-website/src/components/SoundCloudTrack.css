@@ -1,0 +1,17 @@
+.track-container {
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.track-title {
+    font-size: 1.25rem;
+    margin-bottom: 1vh;
+    text-align: left;
+    font-weight: 700;
+}
+
+@media screen and (max-width: 768px) {
+    .track-title {
+        font-size: 1.4rem;
+    }
+}
