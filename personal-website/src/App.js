@@ -8,6 +8,8 @@ import AboutMePage from './pages/AboutMePage';
 import ScriptsPage from './pages/ScriptsPage';
 import SoundsPage from './pages/SoundsPage';
 import SightsPage from './pages/SightsPage';
+import OtherStuffPage from './pages/OtherStuffPage';
+import PaperDatabasePage from './pages/PaperDatabasePage';
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
             <Route path="/scripts" element={<ScriptsPage />} />
             <Route path="/sounds" element={<SoundsPage />} />
             <Route path="/sights" element={<SightsPage />} />
+            <Route path="/other" element={<OtherStuffPage />} />
+            <Route path="/papers" element={<PaperDatabasePage />} />
           </Routes>
         </div>
       </div>

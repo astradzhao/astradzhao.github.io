@@ -1,0 +1,113 @@
+.paper-table-container {
+    max-width: 65vw;
+    width: 65vw;
+    margin: 1vh 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+}
+  
+.search-input {
+    width: 50%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+  
+.paper-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    overflow-y: auto;
+    display: block;
+    height: calc(100% - 120px);
+}
+  
+.paper-table thead {
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
+  
+.paper-table th,
+.paper-table td {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+  
+.paper-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+  
+.paper-table a {
+    color: #007bff;
+    text-decoration: none;
+}
+  
+.paper-table a:hover {
+    text-decoration: underline;
+}
+
+/* Fixed column widths for desktop */
+.paper-table th:nth-child(1),
+.paper-table td:nth-child(1) {
+    width: 40vw;
+    min-width: 40vw;
+    max-width: 40vw;
+}
+
+.paper-table th:nth-child(2),
+.paper-table td:nth-child(2),
+.paper-table th:nth-child(3),
+.paper-table td:nth-child(3) {
+    width: 4vw;
+    min-width: 4vw;
+    max-width: 4vw;
+}
+
+.paper-table th:nth-child(4),
+.paper-table td:nth-child(4) {
+    width: 7vw;
+    min-width: 7vw;
+    max-width: 7vw;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+    .paper-table-container {
+        padding: 1rem;
+        width: 90vw;
+        max-width: 90vw;
+        height: 70vh;
+    }
+
+    .paper-table th:nth-child(1),
+    .paper-table td:nth-child(1) {
+        width: 50vw;
+        min-width: 50vw;
+        max-width: 50vw;
+    }
+
+    .paper-table th:nth-child(2),
+    .paper-table td:nth-child(2),
+    .paper-table th:nth-child(3),
+    .paper-table td:nth-child(3) {
+        width: 15vw;
+        min-width: 15vw;
+        max-width: 15vw;
+    }
+
+    .search-input {
+        padding: 0.75rem;
+        font-size: 16px; /* Prevents zoom on mobile */
+    }
+}

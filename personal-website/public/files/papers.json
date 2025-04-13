@@ -1,0 +1,14 @@
+[
+    {
+        "title": "SMITIN: Self-Monitored Inference-Time Intervention for Generative Music Transformers",
+        "pdf_url": "https://arxiv.org/pdf/2404.02252",
+        "notes_url": "https://astradzhao-website.s3.us-west-1.amazonaws.com/smitin.pdf",
+        "date_added": "2025-04-12"
+    },
+    {
+        "title": "Attention is All You Need",
+        "pdf_url": "https://arxiv.org/pdf/1706.03762",
+        "notes_url": "https://astradzhao-website.s3.us-west-1.amazonaws.com/transformers.pdf",
+        "date_added": "2025-04-12"
+    }
+]

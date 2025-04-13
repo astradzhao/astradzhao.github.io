@@ -48,7 +48,7 @@ function NavBar() {
     paddingTop: '1.2vh',
     textDecoration: 'none',
     color: 'black',
-    fontSize: '2.5vmax',
+    fontSize: '2.2vmax',
     marginRight: '10vw',
     alignItems: 'flex-end',
     height: '100%',
@@ -77,10 +77,10 @@ function NavBar() {
       <div className='navbar-container'>
         <div className='navbar-links'>
           <NavLink to="/" style={nameStyle}>Daniel Zhao</NavLink>
-          {['me', 'scripts', 'sights', 'sounds'].map((linkName) => (
+          {['me', 'scripts', 'sights', 'sounds', '...'].map((linkName) => (
             <NavLink 
               key={linkName}
-              to={`/${linkName}`} 
+              to={linkName === '...' ? '/other' : `/${linkName}`}
               style={({ isActive }) => getLinkStyle(isActive, linkName)}
               onMouseEnter={() => handleMouseEnter(linkName)} 
               onMouseLeave={handleMouseLeave}
