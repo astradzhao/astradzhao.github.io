@@ -5,8 +5,8 @@ import './ScriptsPage.css';
 function ScriptsPage() {
     return (
       <div className='page-container-scripts'>
-        <p className='page-header-small'>MusicRFM</p>
-        <p className='page-text4'>Recently, I have been working on guided music generation, utilizing recursive feature machines (RFMs) with <a href="https://zacharynovack.github.io/" target="_blank" rel="noopener noreferrer" className="resume-link">Zachary Novack </a>
+        <p className='page-header-small'>Music Guided Generation Project - ICLR 2026 submission</p>
+        <p className='page-text4'>Recently, I have been working on guided music generation with <a href="https://zacharynovack.github.io/" target="_blank" rel="noopener noreferrer" className="resume-link">Zachary Novack </a>
         and <a href="https://cseweb.ucsd.edu/~tberg/" target="_blank" rel="noopener noreferrer" className="resume-link">Prof. Taylor Berg-Kirkpatrick</a>!
           Our goal is to develop a way to guide music generation towards more interpretable outputs.
         </p>
