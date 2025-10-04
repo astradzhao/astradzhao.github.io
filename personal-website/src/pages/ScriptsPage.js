@@ -5,22 +5,27 @@ import './ScriptsPage.css';
 function ScriptsPage() {
     return (
       <div className='page-container-scripts'>
-        <p className='page-header-small'>Music Guided Generation Project - ICLR 2026 submission</p>
-        <p className='page-text4'>Recently, I have been working on guided music generation with <a href="https://zacharynovack.github.io/" target="_blank" rel="noopener noreferrer" className="resume-link">Zachary Novack </a>
+        <p className='page-header-small'>Muras - Multimodal RAG Assessment Suite</p>
+        <p className='page-text4'>I have just started working on a multimodal RAG assessment suite that can be used to evaluate and benchmark the performance of multimodal RAG systems.
+          Code can be found <a href="https://github.com/muras-eval/muras" target="_blank" rel="noopener noreferrer" className="resume-link">here</a>.
+        </p>
+
+        <p className='page-header-small'>MusicRFM - ICLR 2026 submission</p>
+        <p className='page-text4'>I just submitted a paper on guided music generation using RFMs with <a href="https://zacharynovack.github.io/" target="_blank" rel="noopener noreferrer" className="resume-link">Zachary Novack </a>
         and <a href="https://cseweb.ucsd.edu/~tberg/" target="_blank" rel="noopener noreferrer" className="resume-link">Prof. Taylor Berg-Kirkpatrick</a>!
-          Our goal is to develop a way to guide music generation towards more interpretable outputs.
+          Our goal is to develop a way to guide music generation towards more interpretable outputs. Arxiv up soon!
         </p>
 
         <p className='page-header-small'>CoT Reasoning with Sparse Autoencoder-Guided Generation</p>
-        <p className='page-text4'>First paper, on generating better chain-of-thought reasoning with clustering and sparse autoencoders! Draft{' '}
+        <p className='page-text4'>Paper on generating better chain-of-thought reasoning with clustering and sparse autoencoders! Draft{' '}
         <a href={`${process.env.PUBLIC_URL}/files/pdfs/sae_iclr.pdf`} target="_blank" rel="noopener noreferrer" className="resume-link">
           PDF
         </a>.
         </p>
 
         <p className='page-header-small'>Learner App</p>
-        <p className='page-text4'>I'm currently working on an app that helps language learners improve vocabulary
-           retention and contextual understanding through an LLM-powered interactive translation practice tool! No code though, it's a secret 😸!
+        <p className='page-text4'>I have been on & off working on an app that helps language learners improve vocabulary
+           retention and contextual understanding through an LLM-powered interactive translation practice tool! Code can be found <a href="https://github.com/learner-app/base-app/tree/main" target="_blank" rel="noopener noreferrer" className="resume-link">here</a>.
         </p>
 
         <p className='page-header-small'>Consistency LLMs with Hao AI Lab</p>
