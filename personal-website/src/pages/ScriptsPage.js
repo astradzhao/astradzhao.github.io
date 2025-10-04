@@ -7,7 +7,7 @@ function ScriptsPage() {
       <div className='page-container-scripts'>
         <p className='page-header-small'>Muras - Multimodal RAG Assessment Suite</p>
         <p className='page-text4'>I have just started working on a multimodal RAG assessment suite that can be used to evaluate and benchmark the performance of multimodal RAG systems.
-          Code can be found <a href="https://github.com/muras-eval/muras" target="_blank" rel="noopener noreferrer" className="resume-link">here</a>.
+          Code can be found <a href="https://github.com/astradzhao/muras-lite" target="_blank" rel="noopener noreferrer" className="resume-link">here</a>.
         </p>
 
         <p className='page-header-small'>MusicRFM - ICLR 2026 submission</p>
