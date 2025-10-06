@@ -6,21 +6,19 @@ function ScriptsPage() {
     return (
       <div className='page-container-scripts'>
         <p className='page-header-small'>Muras - Multimodal RAG Assessment Suite</p>
-        <p className='page-text4'>I have just started working on a multimodal RAG assessment suite that can be used to evaluate and benchmark the performance of multimodal RAG systems.
+        <p className='page-text4'>As a personal project, I have just started working on a multimodal RAG assessment suite that can be used to evaluate and benchmark the performance of multimodal RAG systems. 
+          This project is heavily inspired by the text-based <a href="https://github.com/explodinggradients/ragas" target="_blank" rel="noopener noreferrer" className="resume-link">ragas framework</a> and my internship work at Qualcomm, and aims to be a suite specifically used for multimodal and quantized RAG systems.
           Code can be found <a href="https://github.com/astradzhao/muras-lite" target="_blank" rel="noopener noreferrer" className="resume-link">here</a>.
         </p>
 
         <p className='page-header-small'>MusicRFM - ICLR 2026 submission</p>
         <p className='page-text4'>I just submitted a paper on guided music generation using RFMs with <a href="https://zacharynovack.github.io/" target="_blank" rel="noopener noreferrer" className="resume-link">Zachary Novack </a>
         and <a href="https://cseweb.ucsd.edu/~tberg/" target="_blank" rel="noopener noreferrer" className="resume-link">Prof. Taylor Berg-Kirkpatrick</a>!
-          Our goal is to develop a way to guide music generation towards more interpretable outputs. Arxiv up soon!
+          Our goal is to develop a way to guide music generation towards more interpretable outputs. Draft PDF <a href={`${process.env.PUBLIC_URL}/files/pdfs/musicrfm.pdf`} target="_blank" rel="noopener noreferrer" className="resume-link">here</a>. Arxiv up soon!
         </p>
 
         <p className='page-header-small'>CoT Reasoning with Sparse Autoencoder-Guided Generation</p>
-        <p className='page-text4'>Paper on generating better chain-of-thought reasoning with clustering and sparse autoencoders! Draft{' '}
-        <a href={`${process.env.PUBLIC_URL}/files/pdfs/sae_iclr.pdf`} target="_blank" rel="noopener noreferrer" className="resume-link">
-          PDF
-        </a>.
+        <p className='page-text4'>Short paper on generating better chain-of-thought reasoning with clustering and sparse autoencoders! Arxiv <a href="https://arxiv.org/abs/2510.01528" target="_blank" rel="noopener noreferrer" className="resume-link">here</a>.
         </p>
 
         <p className='page-header-small'>Learner App</p>
