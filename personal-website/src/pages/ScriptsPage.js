@@ -13,7 +13,7 @@ function ScriptsPage() {
       description: (
         <>
           As a personal project, I have just started working on a multimodal RAG assessment suite that can be used to evaluate and benchmark the performance of multimodal RAG systems. 
-          This project is heavily inspired by the text-based <a href="https://github.com/explodinggradients/ragas" target="_blank" rel="noopener noreferrer" className="inline-link">ragas framework</a> and my internship work at Qualcomm, and aims to be a suite specifically used for multimodal and quantized RAG systems.
+          This project is heavily inspired by the text-based <a href="https://github.com/explodinggradients/ragas" target="_blank" rel="noopener noreferrer" className="default-link">ragas framework</a> and my internship work at Qualcomm, and aims to be a suite specifically used for multimodal and quantized RAG systems.
         </>
       ),
       link: "https://github.com/astradzhao/muras-lite",
@@ -29,8 +29,8 @@ function ScriptsPage() {
       date: "SEP 2025",
       description: (
         <>
-          First-author paper (ICLR 2026 pending) on guided music generation using recursive feature machines (RFMs) with <a href="https://zacharynovack.github.io/" target="_blank" rel="noopener noreferrer" className="inline-link">Zachary Novack</a>, <a href="https://dmbeaglehole.github.io/" target="_blank" rel="noopener noreferrer" className="inline-link">Daniel Beaglehole</a>, and <a href="https://cseweb.ucsd.edu/~tberg/" target="_blank" rel="noopener noreferrer" className="inline-link">Prof. Taylor Berg-Kirkpatrick</a>! Our goal is to develop a way to guide music generation towards more interpretable outputs. 
-          We hope to extend this framework to <a href="https://github.com/magenta/magenta-realtime" target="_blank" rel="noopener noreferrer" className="inline-link">real-time audio generation</a> in the future. Arxiv up soon!
+          First-author paper (ICLR 2026 pending) on guided music generation using recursive feature machines (RFMs) with <a href="https://zacharynovack.github.io/" target="_blank" rel="noopener noreferrer" className="default-link">Zachary Novack</a>, <a href="https://dmbeaglehole.github.io/" target="_blank" rel="noopener noreferrer" className="default-link">Daniel Beaglehole</a>, and <a href="https://cseweb.ucsd.edu/~tberg/" target="_blank" rel="noopener noreferrer" className="default-link">Prof. Taylor Berg-Kirkpatrick</a>! Our goal is to develop a way to guide music generation towards more interpretable outputs. 
+          We hope to extend this framework to <a href="https://github.com/magenta/magenta-realtime" target="_blank" rel="noopener noreferrer" className="default-link">real-time audio generation</a> in the future. Arxiv up soon!
         </>
       ),
       link: `${process.env.PUBLIC_URL}/files/pdfs/musicrfm.pdf`,
@@ -68,7 +68,7 @@ function ScriptsPage() {
       date: "JUN 2024",
       description: (
         <>
-          I worked a bit with <a href="https://snyhlxde1.github.io/" target="_blank" rel="noopener noreferrer" className="inline-link">Lanxiang Hu</a> and the Hao AI Lab at UCSD on the implementation of Consistency Large Language models, specifically in regards to optimizing its fine-tuning and testing its compatability with qLoRA.
+          I worked a bit with <a href="https://snyhlxde1.github.io/" target="_blank" rel="noopener noreferrer" className="default-link">Lanxiang Hu</a> and the Hao AI Lab at UCSD on the implementation of Consistency Large Language models, specifically in regards to optimizing its fine-tuning and testing its compatability with qLoRA.
         </>
       ),
       link: "https://github.com/hao-ai-lab/Consistency_LLM",

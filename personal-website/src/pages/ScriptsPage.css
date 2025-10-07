@@ -213,20 +213,6 @@
   font-weight: 300;
 }
 
-/* Inline links within descriptions */
-.inline-link {
-  color: #8B458B;
-  text-decoration: none;
-  font-weight: 400;
-  border-bottom: 1px solid rgba(139, 69, 139, 0.3);
-  transition: all 0.2s ease;
-}
-
-.inline-link:hover {
-  color: #6B356B;
-  border-bottom-color: #6B356B;
-}
-
 /* Project Links Container */
 .project-links {
   display: flex;

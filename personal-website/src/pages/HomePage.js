@@ -16,7 +16,7 @@ function HomePage() {
           <div className='text-content'>
             <h1 className='page-text'>I'm an ML researcher, a cellist, a traveler, and a student.</h1>
             <br></br>
-            <p className='page-text3'>Contact me at <a href="mailto:djzhao@ucsd.edu" className="inline-link">djzhao@ucsd.edu</a> or <a href="mailto:danielzhao02@gmail.com" className="inline-link">danielzhao02@gmail.com</a>.</p>
+            <p className='page-text3'>Contact me at <a href="mailto:djzhao@ucsd.edu" className="default-link">djzhao@ucsd.edu</a> or <a href="mailto:danielzhao02@gmail.com" className="default-link">danielzhao02@gmail.com</a>.</p>
           </div>
         </section>
       </main>

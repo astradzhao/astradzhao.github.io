@@ -111,3 +111,12 @@
     font-size: 1.3rem;
   }
 }
+
+.default-link {
+  color: #0048B3;
+  text-decoration: none;
+}
+
+.default-link:hover {
+text-decoration: underline;
+}
