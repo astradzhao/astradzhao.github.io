@@ -41,7 +41,7 @@ function ScriptsPage() {
     {
       title: <em>CoT Reasoning with Sparse Autoencoder-Guided Generation</em>,
       type: "Research",
-      date: "MAR 2025",
+      date: "FEB 2025",
       description: "Co-first author paper on generating better chain-of-thought reasoning with clustering and sparse autoencoders!",
       link: "https://arxiv.org/abs/2510.01528",
       linkText: "View on Arxiv"
@@ -49,7 +49,7 @@ function ScriptsPage() {
     {
       title: "MancalaBot",
       type: "Academic",
-      date: "MAR 2025",
+      date: "FEB 2025",
       description: "For a course final project (CSE 251B: Deep Learning) at UCSD, my team implemented a Mancala bot using MCTS, AlphaZero-esque training, and a custom policy network.",
       link: "https://github.com/PlayerEugene/cse151b251b-wi25-pa5-teamteam",
       linkText: "View on GitHub"
@@ -100,13 +100,13 @@ function ScriptsPage() {
     <div className='page-container-scripts'>
       <div className="projects-header">
         <h2 className="projects-title">My Projects & Research</h2>
-        <p className="projects-subtitle">A small collection of some of my work, research, and personal projects. Click to expand and learn more!</p>
+        <p className="projects-subtitle">Selected collection of some of my work, research, and personal projects. Click to expand and learn more!</p>
       </div>
       
       <div className="projects-list">
         {projects.map((project, index) => (
           <div 
-            key={index} 
+            key={index}
             className={`project-item ${expandedIndex === index ? 'expanded' : ''}`}
             data-type={project.type}
           >
