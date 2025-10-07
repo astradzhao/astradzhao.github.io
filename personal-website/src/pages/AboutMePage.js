@@ -4,7 +4,7 @@ import './AboutMePage.css';
 
 function AboutMePage() {
   return (
-    <div className='page-container'>
+    <main className='page-container' role="main">
       <p className='page-text2'>I'm currently a MS CS student at UCSD, graduating in Dec 2025, with a research focus in NLP, multimodal LLMs, ML systems, and music models. (But I'm also open to other topics!) Since 2024, I have been actively doing research as an intern in both <a href="https://ucsd-musaic.github.io/" target="_blank" rel="noopener noreferrer" className="default-link">MUSAIC</a> and the <a href="https://hao-ai-lab.github.io/" target="_blank" rel="noopener noreferrer" className="default-link">Hao AI Lab</a> at UCSD.</p>
       <p className='page-text2'>I'm also currently a TA (Fall 2025) for <a href="https://cseweb.ucsd.edu/classes/fa25/cse258-a/" target="_blank" rel="noopener noreferrer" className="default-link">CSE 158/258: Web Mining and Recommender Systems</a> under Professor <a href="https://cseweb.ucsd.edu/~jmcauley/" target="_blank" rel="noopener noreferrer" className="default-link">Julian McAuley</a>.</p>
       <br></br>
@@ -22,7 +22,7 @@ function AboutMePage() {
           here
       </a>.
       </p>
-    </div>
+    </main>
   );
 }
 
