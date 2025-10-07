@@ -34,7 +34,9 @@ function ScriptsPage() {
         </>
       ),
       link: `${process.env.PUBLIC_URL}/files/pdfs/musicrfm.pdf`,
-      linkText: "View Draft PDF"
+      linkText: "View Draft PDF",
+      link2: "https://musicrfm.github.io/controllable-music-rfm/",
+      linkText2: "View Audio Samples"
     },
     {
       title: <em>CoT Reasoning with Sparse Autoencoder-Guided Generation</em>,
@@ -128,15 +130,28 @@ function ScriptsPage() {
               <div className="project-description">
                 {project.description}
               </div>
-              <a 
-                href={project.link} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="project-link"
-                onClick={(e) => e.stopPropagation()}
-              >
-                {project.linkText} →
-              </a>
+              <div className="project-links">
+                <a 
+                  href={project.link} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="project-link"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {project.linkText} →
+                </a>
+                {project.link2 && (
+                  <a 
+                    href={project.link2} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="project-link project-link-secondary"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    {project.linkText2} →
+                  </a>
+                )}
+              </div>
             </div>
           </div>
         ))}

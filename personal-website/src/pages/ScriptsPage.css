@@ -227,6 +227,13 @@
   border-bottom-color: #6B356B;
 }
 
+/* Project Links Container */
+.project-links {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
 /* Project Link Button */
 .project-link {
   display: inline-flex;
@@ -247,6 +254,11 @@
   background: linear-gradient(135deg, #6B356B, #7B457B);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(139, 69, 139, 0.3);
+}
+
+/* Secondary Link Style (optional alternative styling) */
+.project-link-secondary {
+  background: linear-gradient(135deg, #7B4585, #8B559B);
 }
 
 /* Responsive Design */
