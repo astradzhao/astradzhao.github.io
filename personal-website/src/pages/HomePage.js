@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Pages.css';
 import './HomePage.css';
 import '../pages/ScriptsPage.css';
@@ -15,8 +16,11 @@ function HomePage() {
           />
           <div className='text-content'>
             <h1 className='page-text'>I'm an ML researcher, a cellist, a traveler, and a student.</h1>
+            <p className='page-text2'>
+              Learn more <Link to="/me" className="default-link">about me</Link> or check out my <Link to="/scripts" className="default-link">projects and research</Link>.
+            </p>
             <br></br>
-            <p className='page-text3'>Contact me at <a href="mailto:djzhao@ucsd.edu" className="default-link">djzhao@ucsd.edu</a> or <a href="mailto:danielzhao02@gmail.com" className="default-link">danielzhao02@gmail.com</a>.</p>
+            <p className='page-text3'>You can contact me at djzhao@ucsd.edu or danielzhao02@gmail.com.</p>
           </div>
         </section>
       </main>

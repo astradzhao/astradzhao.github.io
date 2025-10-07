@@ -61,7 +61,7 @@
     .mobile-only {
         display: flex !important;
         position: absolute !important;
-        bottom: -100vh;
+        bottom: -98vh;
         right: -35vw;
         width: 100%;
         background-color: transparent;
