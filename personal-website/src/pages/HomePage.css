@@ -11,11 +11,14 @@
     height: auto;
     border-radius: 50%;
     object-fit: cover;
+    flex-shrink: 0;
+    aspect-ratio: 1 / 1;
   }
   
   .text-content {
     flex: 1;
     padding-top: 0vmax;
+    min-width: 0;
   }
 
   @media screen and (max-width: 768px) {

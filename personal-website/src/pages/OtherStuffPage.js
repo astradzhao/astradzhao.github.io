@@ -1,6 +1,7 @@
 import React from 'react';
 import './Pages.css';
-import './OtherStuffPage.css';
+import './OtherStuffPage.css';  
+import { Link } from 'react-router-dom';
 
 function OtherStuffPage() {
     return (
@@ -14,7 +15,7 @@ function OtherStuffPage() {
                rel="noopener noreferrer">The AI Snack Zone</a>
             <p className='page-text3'>I do quick and easy paper reviews here - perfect for a snack break!</p>
             <div style={{ marginBottom: '4vh' }}></div>
-            <a href="/papers" className='page-text2' style={{ textDecoration: 'none' }}>Paper Review Database</a>
+            <Link to="/papers" className='page-text2' style={{ textDecoration: 'none' }}>Paper Review Database</Link>
             <p className='page-text3'>A database of notes for papers I've read. Warning - notes may not be comprehensive, useful or legible 😆</p>
             <div style={{ marginBottom: '4vh' }}></div>
             <a href="https://www.youtube.com/@astradJournal" 
