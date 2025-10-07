@@ -1,0 +1,342 @@
+/* Header Section */
+.projects-header {
+  text-align: left;
+  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+}
+
+.projects-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #212529;
+  margin: 0 0 0.5rem 0;
+}
+
+.projects-subtitle {
+  font-size: 1rem;
+  color: #6c757d;
+  font-weight: 300;
+  margin: 0;
+}
+
+/* Projects List */
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-bottom: 3rem;
+}
+
+/* Individual Project Item */
+.project-item {
+  background: rgba(139, 69, 139, 0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 4px;
+  border: 1px solid rgba(139, 69, 139, 0.15);
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.project-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Type-specific colors for top bar */
+.project-item[data-type="Research"]::before {
+  background: linear-gradient(90deg, #a8d8ea, #bfdbfe);
+}
+
+.project-item[data-type="Personal"]::before {
+  background: linear-gradient(90deg, #d8b4fe, #e9d5ff);
+}
+
+.project-item[data-type="Academic"]::before {
+  background: linear-gradient(90deg, #bbf7d0, #d1fae5);
+}
+
+.project-item[data-type="Other"]::before {
+  background: linear-gradient(90deg, #fed7aa, #fde68a);
+}
+
+.project-item:hover::before {
+  opacity: 1;
+}
+
+.project-item.expanded {
+  background: rgba(139, 69, 139, 0.12);
+  border-color: rgba(139, 69, 139, 0.25);
+  box-shadow: 0 8px 16px rgba(139, 69, 139, 0.15);
+}
+
+.project-item.expanded::before {
+  opacity: 1;
+}
+
+/* clickable project header */
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.85rem 1.25rem;
+  cursor: pointer;
+  user-select: none;
+  gap: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.project-item:not(.expanded) .project-header:hover {
+  background: rgba(139, 69, 139, 0.05);
+}
+
+.project-header-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.project-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #212529;
+  margin: 0;
+  line-height: 1.4;
+  flex: 1;
+}
+
+.project-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.project-date {
+  font-size: 0.85rem;
+  color: #6c757d;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.project-type {
+  color: white;
+  padding: 0.3rem 0.75rem;
+  border-radius: 3px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+}
+
+/* Type-specific badge colors */
+.project-item[data-type="Research"] .project-type {
+  background: linear-gradient(135deg, #a8d8ea, #bfdbfe);
+  color: #1e40af;
+}
+
+.project-item[data-type="Personal"] .project-type {
+  background: linear-gradient(135deg, #d8b4fe, #e9d5ff);
+  color: #553c9a;
+}
+
+.project-item[data-type="Academic"] .project-type {
+  background: linear-gradient(135deg, #bbf7d0, #d1fae5);
+  color: #22543d;
+}
+
+.project-item[data-type="Other"] .project-type {
+  background: linear-gradient(135deg, #fed7aa, #fde68a);
+  color: #c05621;
+}
+
+/* Expand/Collapse Icon */
+.expand-icon {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #6c757d;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s ease;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  background: rgba(139, 69, 139, 0.1);
+}
+
+.project-item.expanded .expand-icon {
+  transform: rotate(180deg);
+  color: #8B458B;
+}
+
+.project-header:hover .expand-icon {
+  color: #8B458B;
+  background: rgba(139, 69, 139, 0.15);
+}
+
+/* Project Content (Expandable part) */
+.project-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              padding 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.3s ease;
+  opacity: 0;
+  padding: 0 1.5rem;
+}
+
+.project-item.expanded .project-content {
+  max-height: 500px;
+  opacity: 1;
+  padding: 0 1.25rem 1rem 1.25rem;
+}
+
+.project-description {
+  font-size: 0.95rem;
+  color: #495057;
+  line-height: 1.6;
+  margin: 0 0 1rem 0;
+  font-weight: 300;
+}
+
+/* Inline links within descriptions */
+.inline-link {
+  color: #8B458B;
+  text-decoration: none;
+  font-weight: 400;
+  border-bottom: 1px solid rgba(139, 69, 139, 0.3);
+  transition: all 0.2s ease;
+}
+
+.inline-link:hover {
+  color: #6B356B;
+  border-bottom-color: #6B356B;
+}
+
+/* Project Link Button */
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1rem;
+  background: linear-gradient(135deg, #8B458B, #9B559B);
+  color: white;
+  text-decoration: none;
+  border-radius: 3px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(139, 69, 139, 0.2);
+}
+
+.project-link:hover {
+  background: linear-gradient(135deg, #6B356B, #7B457B);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(139, 69, 139, 0.3);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .projects-header {
+    margin-bottom: 2rem;
+  }
+
+  .projects-title {
+    font-size: 1.75rem;
+  }
+
+  .projects-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .project-header {
+    padding: 0.85rem 1.1rem;
+  }
+
+  .project-header-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .project-title {
+    font-size: 1.05rem;
+  }
+
+  .project-meta {
+    gap: 0.5rem;
+  }
+
+  .project-date {
+    font-size: 0.8rem;
+  }
+
+  .project-type {
+    font-size: 0.65rem;
+    padding: 0.3rem 0.7rem;
+  }
+
+  .expand-icon {
+    font-size: 1.5rem;
+    width: 24px;
+    height: 24px;
+  }
+
+  .project-item.expanded .project-content {
+    padding: 0 1.1rem 1rem 1.1rem;
+  }
+
+  .project-description {
+    font-size: 0.95rem;
+  }
+
+  .project-link {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .projects-title {
+    font-size: 1.5rem;
+  }
+
+  .projects-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .project-header {
+    padding: 0.75rem 1rem;
+  }
+
+  .project-title {
+    font-size: 0.95rem;
+  }
+
+  .project-date {
+    font-size: 0.75rem;
+  }
+
+  .project-description {
+    font-size: 0.9rem;
+  }
+
+  .project-item.expanded .project-content {
+    padding: 0 1rem 1rem 1rem;
+    max-height: 600px;
+  }
+}
