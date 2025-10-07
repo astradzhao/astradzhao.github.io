@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import './App.css';
@@ -14,6 +14,12 @@ import PaperDatabasePage from './pages/PaperDatabasePage';
 
 function AnimatedRoutes() {
   const location = useLocation();
+
+  useEffect(() => {
+    // Scroll body to top whenever location changes (body has overflow: auto in App.css)
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  }, [location]);
 
   return (
     <div className='main-content'>

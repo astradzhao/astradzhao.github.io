@@ -17,6 +17,11 @@
 }
 
 @media screen and (max-width: 768px) {
+    .page-wrapper {
+        min-height: calc(100vh - 5vh);
+        padding-bottom: 10vh;
+    }
+
     .image-page-container {
         width: 90%;
         margin-top: -5vh;

@@ -79,11 +79,15 @@
   .page-container {
     width: 85%;
     margin-top: 0.5vh;
+    min-height: calc(100vh - 3vh);
+    padding-bottom: 10vh;
   }
 
   .page-container-scripts {
     width: 85%;
     margin-top: 0.5vh;
+    min-height: calc(100vh - 3vh);
+    padding-bottom: 10vh;
   }
   
   .page-header {
