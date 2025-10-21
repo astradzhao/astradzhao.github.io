@@ -7,19 +7,6 @@ function ScriptsPage() {
 
   const projects = [
     {
-      title: "Muras: A Multimodal RAG Assessment Suite",
-      type: "Research",
-      date: "OCT 2025",
-      description: (
-        <>
-          As a personal project, I have just started working on a multimodal RAG assessment suite that can be used to evaluate and benchmark the performance of multimodal RAG systems. 
-          This project is heavily inspired by the text-based <a href="https://github.com/explodinggradients/ragas" target="_blank" rel="noopener noreferrer" className="default-link">ragas framework</a> and my internship work at Qualcomm, and aims to be a suite specifically used for multimodal and quantized RAG systems.
-        </>
-      ),
-      link: "https://github.com/astradzhao/muras-lite",
-      linkText: "View on GitHub"
-    },
-    {
       title: (
         <>
           <em>Steering AR Music Generation with RFMs</em> (ICLR 2026 submission)
@@ -35,8 +22,23 @@ function ScriptsPage() {
       ),
       link: `${process.env.PUBLIC_URL}/files/pdfs/musicrfm.pdf`,
       linkText: "View Draft PDF",
-      link2: "https://musicrfm.github.io/controllable-music-rfm/",
-      linkText2: "View Audio Samples"
+      link2: "https://astradzhao.github.io/MusicRFMPage/",
+      linkText2: "View Audio Samples",
+      link3: "https://github.com/astradzhao/music-rfm",
+      linkText3: "View Open Source Code"
+    },
+    {
+      title: "Muras: A Multimodal RAG Assessment Suite",
+      type: "Research",
+      date: "OCT 2025",
+      description: (
+        <>
+          As a personal project, I have just started working on a multimodal RAG assessment suite that can be used to evaluate and benchmark the performance of multimodal RAG systems. 
+          This project is heavily inspired by the text-based <a href="https://github.com/explodinggradients/ragas" target="_blank" rel="noopener noreferrer" className="default-link">ragas framework</a> and my internship work at Qualcomm, and aims to be a suite specifically used for multimodal and quantized RAG systems.
+        </>
+      ),
+      link: "https://github.com/astradzhao/muras-lite",
+      linkText: "View on GitHub"
     },
     {
       title: <em>CoT Reasoning with Sparse Autoencoder-Guided Generation</em>,
@@ -149,6 +151,17 @@ function ScriptsPage() {
                     onClick={(e) => e.stopPropagation()}
                   >
                     {project.linkText2} →
+                  </a>
+                )}
+                {project.link3 && (
+                  <a 
+                    href={project.link3} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="project-link project-link-secondary"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    {project.linkText3} →
                   </a>
                 )}
               </div>
