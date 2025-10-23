@@ -20,12 +20,12 @@ function ScriptsPage() {
           We hope to extend this framework to <a href="https://github.com/magenta/magenta-realtime" target="_blank" rel="noopener noreferrer" className="default-link">real-time audio generation</a> in the future. Arxiv up soon!
         </>
       ),
-      link: `${process.env.PUBLIC_URL}/files/pdfs/musicrfm.pdf`,
-      linkText: "View Draft PDF",
+      link: "https://arxiv.org/abs/2510.19127",
+      linkText: "View on Arxiv",
       link2: "https://astradzhao.github.io/MusicRFMPage/",
       linkText2: "View Audio Samples",
       link3: "https://github.com/astradzhao/music-rfm",
-      linkText3: "View Open Source Code"
+      linkText3: "Open Source Code"
     },
     {
       title: "Muras: A Multimodal RAG Assessment Suite",
