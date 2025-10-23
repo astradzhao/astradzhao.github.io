@@ -9,7 +9,7 @@ function ScriptsPage() {
     {
       title: (
         <>
-          <em>Steering AR Music Generation with RFMs</em> (ICLR 2026 submission)
+          <em>Steering AR Music Generation with RFMs</em>
         </>
       ),
       type: "Research",
