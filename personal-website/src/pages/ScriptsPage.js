@@ -29,7 +29,7 @@ function ScriptsPage() {
     },
     {
       title: (
-        <span style={{ fontSize: "0.95rem" }}>
+        <span style={{ fontSize: "0.85rem" }}>
           <em>Benchmarking Scientific Understanding and Reasoning for Video Generation using VideoScience-Bench</em> (pending CVPR 2026)
         </span>
       ),
