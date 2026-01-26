@@ -9,7 +9,7 @@ function ScriptsPage() {
     {
       title: (
         <>
-          <em>Steering AR Music Generation with RFMs <strong>Accepted to ICLR 2026</strong>. </em>
+          <em>Steering AR Music Generation with RFMs. </em>< strong>(ICLR 2026)</strong>
         </>
       ),
       type: "Research",
@@ -28,10 +28,14 @@ function ScriptsPage() {
       linkText3: "Open Source Code"
     },
     {
-      title: <em>Benchmarking Scientific Understanding and Reasoning for Video Generation using VideoScience-Bench (pending CVPR 2026)</em>,
+      title: (
+        <span style={{ fontSize: "0.95rem" }}>
+          <em>Benchmarking Scientific Understanding and Reasoning for Video Generation using VideoScience-Bench</em> (pending CVPR 2026)
+        </span>
+      ),
       type: "Research",
       date: "OCT 2025",
-      description: "Briefly contributed to development of VideoScience-Bench, an open-source auto-eval physics reasoning benchmark for video generation",
+      description: "Briefly contributed to development of VideoScience-Bench, an open-source auto-eval physics reasoning benchmark for video generation.",
       link: `${process.env.PUBLIC_URL}/files/pdfs/videosciencebench.pdf`,
       linkText: "View Draft PDF"
     },
