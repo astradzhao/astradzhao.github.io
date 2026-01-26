@@ -3,20 +3,21 @@
     flex-direction: column;
     justify-content: flex-start;
     min-height: calc(100vh - 15vh);
-    margin: auto;
+    margin: 0 auto;
     padding: 0;
+    padding-top: 7vh;
     overflow: auto;
     text-align: left;
     width: 70%;
-    margin-top: 6vh;
 }
 
 .page-container-scripts{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    margin: 3vh auto 0 auto;
+    margin: 0 auto 0 auto;
     padding: 0;
+    padding-top: 7vh;
     overflow-y: auto;
     overflow-x: hidden;
     text-align: left;
@@ -78,14 +79,14 @@
 @media screen and (max-width: 768px) {
   .page-container {
     width: 85%;
-    margin-top: 0.5vh;
+    padding-top: 10vh;
     min-height: calc(100vh - 3vh);
     padding-bottom: 10vh;
   }
 
   .page-container-scripts {
     width: 85%;
-    margin-top: 0.5vh;
+    padding-top: 10vh;
     min-height: calc(100vh - 3vh);
     padding-bottom: 10vh;
   }
