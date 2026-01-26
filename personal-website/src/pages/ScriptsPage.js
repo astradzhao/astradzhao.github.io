@@ -9,14 +9,14 @@ function ScriptsPage() {
     {
       title: (
         <>
-          <em>Steering AR Music Generation with RFMs</em>
+          <em>Steering AR Music Generation with RFMs <strong>Accepted to ICLR 2026</strong>. </em>
         </>
       ),
       type: "Research",
-      date: "SEP 2025",
+      date: "JAN 2026",
       description: (
         <>
-          First-author paper on guided music generation using recursive feature machines (RFMs) with <a href="https://zacharynovack.github.io/" target="_blank" rel="noopener noreferrer" className="default-link">Zachary Novack</a>, <a href="https://dmbeaglehole.github.io/" target="_blank" rel="noopener noreferrer" className="default-link">Daniel Beaglehole</a>, and <a href="https://cseweb.ucsd.edu/~tberg/" target="_blank" rel="noopener noreferrer" className="default-link">Prof. Taylor Berg-Kirkpatrick</a>! Our goal is to develop a way to guide music generation towards more interpretable outputs. 
+          First-author ICLR 2026 paper on guided music generation using recursive feature machines (RFMs) with <a href="https://zacharynovack.github.io/" target="_blank" rel="noopener noreferrer" className="default-link">Zachary Novack</a>, <a href="https://dmbeaglehole.github.io/" target="_blank" rel="noopener noreferrer" className="default-link">Daniel Beaglehole</a>, and <a href="https://cseweb.ucsd.edu/~tberg/" target="_blank" rel="noopener noreferrer" className="default-link">Prof. Taylor Berg-Kirkpatrick</a>! Our goal is to develop a way to guide music generation towards more interpretable outputs. 
           We hope to extend this framework to <a href="https://github.com/magenta/magenta-realtime" target="_blank" rel="noopener noreferrer" className="default-link">real-time audio generation</a> in the future. Arxiv up soon!
         </>
       ),
@@ -28,17 +28,12 @@ function ScriptsPage() {
       linkText3: "Open Source Code"
     },
     {
-      title: "Muras: A Multimodal RAG Assessment Suite",
+      title: <em>Benchmarking Scientific Understanding and Reasoning for Video Generation using VideoScience-Bench (pending CVPR 2026)</em>,
       type: "Research",
       date: "OCT 2025",
-      description: (
-        <>
-          As a personal project, I have just started working on a multimodal RAG assessment suite that can be used to evaluate and benchmark the performance of multimodal RAG systems. 
-          This project is heavily inspired by the text-based <a href="https://github.com/explodinggradients/ragas" target="_blank" rel="noopener noreferrer" className="default-link">ragas framework</a> and my internship work at Qualcomm, and aims to be a suite specifically used for multimodal and quantized RAG systems.
-        </>
-      ),
-      link: "https://github.com/astradzhao/muras-lite",
-      linkText: "View on GitHub"
+      description: "Briefly contributed to development of VideoScience-Bench, an open-source auto-eval physics reasoning benchmark for video generation",
+      link: `${process.env.PUBLIC_URL}/files/pdfs/videosciencebench.pdf`,
+      linkText: "View Draft PDF"
     },
     {
       title: <em>CoT Reasoning with Sparse Autoencoder-Guided Generation</em>,
