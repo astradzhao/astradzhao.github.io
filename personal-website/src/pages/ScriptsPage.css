@@ -714,11 +714,6 @@
   .pm-title {
     font-size: clamp(2.2rem, 9vw, 2.8rem);
   }
-  .pm-foot {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-  }
 }
 
 /* ---------- Responsive ---------- */
