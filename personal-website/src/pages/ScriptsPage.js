@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Pages.css';
 import './ScriptsPage.css';
 
 const ArrowIcon = () => (
   <svg
     className="ps-arrow"
-    width="12"
-    height="12"
+    width="11"
+    height="11"
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
@@ -20,12 +20,29 @@ const ArrowIcon = () => (
   </svg>
 );
 
+const ChevronIcon = () => (
+  <svg
+    className="ps-chevron"
+    width="12"
+    height="12"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    aria-hidden="true"
+  >
+    <polyline points="6 9 12 15 18 9"></polyline>
+  </svg>
+);
+
 function ScriptsPage() {
   const research = [
     {
       kind: "Conference Paper",
       venue: "ICLR 2026",
-      title: "Steering AR Music Generation with RFMs",
+      title: "Steering Autoregressive Music Generation with Recursive Feature Machines",
       date: "Jan 2026",
       description: (
         <>
@@ -89,9 +106,15 @@ function ScriptsPage() {
   ];
 
   const sections = [
-    { name: "Research", slug: "research", projects: research },
-    { name: "Creations", slug: "creations", projects: creations }
+    { name: "Creations", slug: "creations", projects: creations },
+    { name: "Research", slug: "research", projects: research }
   ];
+
+  const [expandedKey, setExpandedKey] = useState(null);
+
+  const toggle = (key) => {
+    setExpandedKey((prev) => (prev === key ? null : key));
+  };
 
   return (
     <div className='page-container-scripts'>
@@ -106,61 +129,87 @@ function ScriptsPage() {
           </header>
 
           <ol className="ps-list">
-            {section.projects.map((project, i) => (
-              <li
-                key={i}
-                className="ps-item"
-                data-section={section.slug}
-              >
-                <span className="ps-item-index" aria-hidden="true">
-                  {(i + 1).toString().padStart(2, '0')}
-                </span>
+            {section.projects.map((project, i) => {
+              const key = `${section.slug}-${i}`;
+              const isOpen = expandedKey === key;
+              return (
+                <li
+                  key={i}
+                  className={`ps-item ${isOpen ? 'is-open' : ''}`}
+                  data-section={section.slug}
+                >
+                  <span className="ps-item-index" aria-hidden="true">
+                    {(i + 1).toString().padStart(2, '0')}
+                  </span>
 
-                <div className="ps-item-content">
-                  <div className="ps-item-meta-row">
-                    <div className="ps-item-tags">
-                      {project.kind && (
-                        <span className="ps-tag ps-tag-kind">{project.kind}</span>
-                      )}
-                      {project.venue && (
-                        <span className="ps-tag-divider" aria-hidden="true">·</span>
-                      )}
-                      {project.venue && (
-                        <span className="ps-tag ps-tag-venue">{project.venue}</span>
-                      )}
-                      {project.isLive && (
-                        <span className="ps-tag-live" aria-label="Live deployed project">
-                          <span className="ps-live-dot" aria-hidden="true"></span>
-                          Live
+                  <div className="ps-item-content">
+                    <button
+                      type="button"
+                      className="ps-item-toggle"
+                      onClick={() => toggle(key)}
+                      aria-expanded={isOpen}
+                      aria-controls={`${key}-body`}
+                    >
+                      <div className="ps-item-meta-row">
+                        <div className="ps-item-tags">
+                          {project.kind && (
+                            <span className="ps-tag ps-tag-kind">{project.kind}</span>
+                          )}
+                          {project.venue && (
+                            <span className="ps-tag-divider" aria-hidden="true">·</span>
+                          )}
+                          {project.venue && (
+                            <span className="ps-tag ps-tag-venue">{project.venue}</span>
+                          )}
+                          {project.isLive && (
+                            <span className="ps-tag-live" aria-label="Live deployed project">
+                              <span className="ps-live-dot" aria-hidden="true"></span>
+                              Live
+                            </span>
+                          )}
+                        </div>
+                        <span className="ps-item-date">{project.date}</span>
+                      </div>
+
+                      <div className="ps-item-title-row">
+                        <h3 className="ps-item-title">{project.title}</h3>
+                        <span className="ps-item-chevron" aria-hidden="true">
+                          <ChevronIcon />
                         </span>
-                      )}
+                      </div>
+                    </button>
+
+                    <div
+                      id={`${key}-body`}
+                      className="ps-item-body"
+                      aria-hidden={!isOpen}
+                    >
+                      <div className="ps-item-body-inner">
+                        <div className="ps-item-description">
+                          {project.description}
+                        </div>
+
+                        <div className="ps-item-actions">
+                          {project.links.map((link, j) => (
+                            <a
+                              key={j}
+                              href={link.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className={`ps-action ${link.primary ? 'ps-action-primary' : 'ps-action-ghost'}`}
+                              tabIndex={isOpen ? 0 : -1}
+                            >
+                              <span>{link.label}</span>
+                              <ArrowIcon />
+                            </a>
+                          ))}
+                        </div>
+                      </div>
                     </div>
-                    <span className="ps-item-date">{project.date}</span>
                   </div>
-
-                  <h3 className="ps-item-title">{project.title}</h3>
-
-                  <div className="ps-item-description">
-                    {project.description}
-                  </div>
-
-                  <div className="ps-item-actions">
-                    {project.links.map((link, j) => (
-                      <a
-                        key={j}
-                        href={link.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`ps-action ${link.primary ? 'ps-action-primary' : 'ps-action-ghost'}`}
-                      >
-                        <span>{link.label}</span>
-                        <ArrowIcon />
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              </li>
-            ))}
+                </li>
+              );
+            })}
           </ol>
         </section>
       ))}

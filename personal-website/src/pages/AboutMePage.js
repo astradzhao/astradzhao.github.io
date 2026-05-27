@@ -17,12 +17,6 @@ function AboutMePage() {
       <p className='page-text3'>In winter 2025, I was a TA for <a href="https://hao-ai-lab.github.io/cse234-w25/" target="_blank" rel="noopener noreferrer" className="default-link">CSE 234: Data Systems for ML</a> under Professor <a href="https://cseweb.ucsd.edu/~haozhang/" target="_blank" rel="noopener noreferrer" className="default-link">Hao Zhang</a>.</p>
       <p className='page-text3'>Additionally, I have worked as a software engineer intern at Accretional, Hinge Health, and Cisco Meraki. I was a longtime tutor for a Bay Area-based CS tutoring startup called Breakout Mentors.</p>
       <p className='page-text3'>In my free time, I like playing the cello, cafe-hopping, golfing, DJing, and playing poker.</p>
-      <p className='page-text2'>
-      For more information on me, please reference my resume&nbsp;
-      <a href={`${process.env.PUBLIC_URL}/files/pdfs/daniel_zhao_resume.pdf`} target="_blank" rel="noopener noreferrer" className="default-link">
-          here.
-      </a>
-      </p>
     </main>
   );
 }

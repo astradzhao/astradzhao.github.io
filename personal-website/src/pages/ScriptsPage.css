@@ -1,5 +1,5 @@
 /* ============================================================
-   Scripts Page — Research & Creations (always-open CV layout)
+   Scripts Page — Research & Creations (collapsible CV layout)
    ============================================================ */
 
 :root {
@@ -19,7 +19,7 @@
 
 /* ---------- Section ---------- */
 .ps-section {
-  margin-bottom: 3.5rem;
+  margin-bottom: 2.25rem;
 }
 
 .ps-section:last-child {
@@ -30,7 +30,7 @@
   display: flex;
   align-items: center;
   gap: 0.85rem;
-  margin: 0 0 1.75rem 0;
+  margin: 0 0 1rem 0;
 }
 
 .ps-section-label {
@@ -89,18 +89,17 @@
   display: grid;
   grid-template-columns: 2.25rem 1fr;
   gap: 1.25rem;
-  padding: 1.5rem 0 1.75rem 0;
+  padding: 0.75rem 0;
   border-bottom: 1px solid var(--ps-divider);
   position: relative;
 }
 
 .ps-item:first-child {
-  padding-top: 0;
+  padding-top: 0.25rem;
 }
 
 .ps-item:last-child {
   border-bottom: none;
-  padding-bottom: 0.5rem;
 }
 
 /* index column */
@@ -127,13 +126,38 @@
   min-width: 0;
 }
 
+/* ---------- Toggle (clickable header row) ---------- */
+.ps-item-toggle {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  display: block;
+  border-radius: 4px;
+  transition: opacity 0.15s ease;
+}
+
+.ps-item-toggle:hover .ps-item-title {
+  color: var(--ps-ink);
+}
+
+.ps-item-toggle:focus-visible {
+  outline: 2px solid rgba(22, 16, 30, 0.18);
+  outline-offset: 4px;
+}
+
 /* meta row (tags + date) */
 .ps-item-meta-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 0.55rem;
+  margin-bottom: 0.3rem;
 }
 
 .ps-item-tags {
@@ -176,13 +200,13 @@
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  padding: 0.18rem 0.5rem 0.18rem 0.45rem;
-  margin-left: 0.25rem;
+  padding: 0.15rem 0.45rem 0.15rem 0.4rem;
+  margin-left: 0.2rem;
   background: rgba(16, 185, 129, 0.10);
   color: #047857;
   border: 1px solid rgba(16, 185, 129, 0.22);
   border-radius: 999px;
-  font-size: 0.6rem;
+  font-size: 0.58rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -219,14 +243,24 @@
   flex-shrink: 0;
 }
 
+/* title row */
+.ps-item-title-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
 /* title */
 .ps-item-title {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 500;
   color: var(--ps-ink);
-  margin: 0 0 0.7rem 0;
+  margin: 0;
   line-height: 1.35;
   letter-spacing: -0.01em;
+  min-width: 0;
+  flex: 1;
 }
 
 .ps-item[data-section="research"] .ps-item-title {
@@ -238,38 +272,99 @@
   font-weight: 600;
 }
 
-/* description */
-.ps-item-description {
-  font-size: 0.97rem;
-  color: var(--ps-ink-soft);
-  line-height: 1.65;
-  font-weight: 300;
-  margin: 0 0 1.1rem 0;
-  max-width: 65ch;
+/* chevron */
+.ps-item-chevron {
+  color: var(--ps-muted-2);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1), color 0.15s ease;
+  transform-origin: center;
+  align-self: center;
 }
 
-/* actions */
+.ps-item-toggle:hover .ps-item-chevron {
+  color: var(--ps-muted);
+}
+
+.ps-item.is-open .ps-item-chevron {
+  transform: rotate(180deg);
+  color: var(--ps-ink-soft);
+}
+
+/* ---------- Body (smoothly collapsible) ----------
+   Uses grid-template-rows 0fr→1fr so height animates to/from auto. */
+.ps-item-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition:
+    grid-template-rows 0.32s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.22s ease,
+    margin-top 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+  margin-top: 0;
+  will-change: grid-template-rows, opacity;
+}
+
+.ps-item.is-open .ps-item-body {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  margin-top: 0.7rem;
+}
+
+.ps-item-body-inner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* description — full width now */
+.ps-item-description {
+  font-size: 0.95rem;
+  color: var(--ps-ink-soft);
+  line-height: 1.6;
+  font-weight: 300;
+  margin: 0 0 0.85rem 0;
+}
+
+/* ---------- Sleek inline actions ---------- */
 .ps-item-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  align-items: center;
+  gap: 0.15rem 1.1rem;
 }
 
 .ps-action {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
-  padding: 0.45rem 0.85rem;
+  gap: 0.3rem;
+  padding: 0.1rem 0;
   font-size: 0.82rem;
   font-weight: 500;
   text-decoration: none;
-  border-radius: 6px;
-  border: 1px solid transparent;
-  transition:
-    background-color 0.2s ease,
-    border-color 0.2s ease,
-    color 0.2s ease;
+  background: transparent;
+  border: 0;
   letter-spacing: -0.005em;
+  transition: color 0.15s ease, opacity 0.15s ease;
+  position: relative;
+  color: var(--ps-ink-soft);
+}
+
+.ps-action::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 1rem;
+  bottom: 0.05rem;
+  height: 1px;
+  background: currentColor;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.ps-action:hover::after {
+  opacity: 0.45;
 }
 
 .ps-action .ps-arrow {
@@ -280,56 +375,38 @@
   transform: translate(2px, -2px);
 }
 
-/* Primary — research */
+/* Primary (accent) variants */
 .ps-item[data-section="research"] .ps-action-primary {
-  background: var(--ps-accent-research);
-  color: #fff;
-  border-color: var(--ps-accent-research);
+  color: var(--ps-accent-research);
 }
 
-.ps-item[data-section="research"] .ps-action-primary:hover {
-  background: #6f366f;
-  border-color: #6f366f;
-}
-
-/* Primary — creations */
 .ps-item[data-section="creations"] .ps-action-primary {
-  background: var(--ps-accent-creations);
-  color: #fff;
-  border-color: var(--ps-accent-creations);
+  color: var(--ps-accent-creations);
 }
 
-.ps-item[data-section="creations"] .ps-action-primary:hover {
-  background: #9a330a;
-  border-color: #9a330a;
-}
-
-/* Ghost / secondary */
+/* Ghost */
 .ps-action-ghost {
-  background: transparent;
-  color: var(--ps-ink);
-  border-color: var(--ps-divider-strong);
+  color: var(--ps-muted);
 }
 
 .ps-action-ghost:hover {
-  border-color: rgba(22, 16, 30, 0.32);
-  background: rgba(22, 16, 30, 0.03);
+  color: var(--ps-ink);
 }
 
 /* ---------- Responsive ---------- */
 @media screen and (max-width: 768px) {
   .ps-section {
-    margin-bottom: 2.75rem;
+    margin-bottom: 2rem;
   }
 
   .ps-section-header {
-    margin-bottom: 1.4rem;
+    margin-bottom: 0.9rem;
   }
 
   .ps-item {
     grid-template-columns: 1fr;
     gap: 0;
-    padding: 1.25rem 0 1.4rem 0;
+    padding: 0.7rem 0;
   }
 
   .ps-item-index {
@@ -339,7 +416,7 @@
   .ps-item-meta-row {
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.4rem;
+    gap: 0.35rem;
   }
 
   .ps-item-tags {
@@ -351,22 +428,21 @@
   }
 
   .ps-item-title {
-    font-size: 1.08rem;
+    font-size: 1rem;
   }
 
   .ps-item-description {
-    font-size: 0.93rem;
+    font-size: 0.9rem;
   }
 
   .ps-action {
-    font-size: 0.82rem;
-    padding: 0.45rem 0.8rem;
+    font-size: 0.8rem;
   }
 }
 
 @media screen and (max-width: 480px) {
   .ps-item-title {
-    font-size: 1rem;
+    font-size: 0.96rem;
   }
 
   .ps-item-tags {
@@ -378,6 +454,6 @@
   }
 
   .ps-item-description {
-    font-size: 0.9rem;
+    font-size: 0.88rem;
   }
 }
