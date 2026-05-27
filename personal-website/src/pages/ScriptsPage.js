@@ -62,7 +62,8 @@ function ScriptsPage() {
       date: "Oct 2025",
       description: "Briefly contributed to development of VideoScience-Bench, an open-source auto-eval physics reasoning benchmark for video generation.",
       links: [
-        { url: `${process.env.PUBLIC_URL}/files/pdfs/videosciencebench.pdf`, label: "View Draft PDF", primary: true }
+        { url: "https://arxiv.org/abs/2512.02942", label: "View on Arxiv", primary: true },
+        { url: "https://github.com/hao-ai-lab/VideoScience", label: "Source Code" }
       ]
     },
     {
