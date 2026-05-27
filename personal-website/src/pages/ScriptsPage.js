@@ -1,99 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './Pages.css';
 import './ScriptsPage.css';
-
-const PICK_ME_NEIGHBORHOODS = [
-  'West Village',
-  'Lower East Side',
-  'East Harlem',
-  'Chelsea',
-  'Tribeca',
-  'SoHo',
-  'NoMad',
-  "Hell's Kitchen",
-  'Chinatown',
-  'Williamsburg',
-  'Astoria',
-  'Bushwick',
-];
-
-function PickMeCard({ project }) {
-  const primary = project.links.find((l) => l.primary) || project.links[0];
-  let host = '';
-  try {
-    host = primary ? new URL(primary.url).host.replace(/^www\./, '') : '';
-  } catch (e) {
-    host = '';
-  }
-
-  const [idx, setIdx] = useState(0);
-  const [paused, setPaused] = useState(false);
-
-  useEffect(() => {
-    if (paused) return undefined;
-    const t = setInterval(() => {
-      setIdx((i) => (i + 1) % PICK_ME_NEIGHBORHOODS.length);
-    }, 3000);
-    return () => clearInterval(t);
-  }, [paused]);
-
-  return (
-    <a
-      href={primary ? primary.url : '#'}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="pm-card"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-      aria-label={`${project.title} — open the live app at ${host}`}
-    >
-      <div className="pm-card-grid" aria-hidden="true" />
-      <div className="pm-card-glow" aria-hidden="true" />
-
-      <div className="pm-statusbar">
-        <span className="pm-status-left">
-          <span className="pm-status-dot" aria-hidden="true" />
-          <span className="pm-status-text">live</span>
-          <span className="pm-status-sep" aria-hidden="true">/</span>
-          <span className="pm-status-url">{host}</span>
-        </span>
-        <span className="pm-status-right">
-          <span className="pm-status-date">{project.date}</span>
-          <span className="pm-status-arrow" aria-hidden="true">
-            <ArrowIcon />
-          </span>
-        </span>
-      </div>
-
-      <div className="pm-body">
-        <div className="pm-headline">
-          <h3 className="pm-title">
-            <span className="pm-title-word">Pick</span>
-            <span className="pm-title-word pm-title-word-em">Me</span>
-            <span className="pm-title-dot" aria-hidden="true">.</span>
-          </h3>
-
-          <p className="pm-pitch">
-            <span className="pm-pitch-lead">tonight you're going to </span>
-            <span className="pm-rolodex">
-              {PICK_ME_NEIGHBORHOODS.map((name, n) => (
-                <span
-                  key={name}
-                  className={`pm-rolodex-item${n === idx ? ' is-active' : ''}`}
-                  aria-hidden={n !== idx}
-                >
-                  {name}
-                </span>
-              ))}
-            </span>
-          </p>
-        </div>
-
-        <p className="pm-description">{project.description}</p>
-      </div>
-    </a>
-  );
-}
 
 const ArrowIcon = () => (
   <svg
@@ -221,14 +128,79 @@ function ScriptsPage() {
             </span>
           </header>
 
-          <ol className={`ps-list ${section.slug === 'creations' ? 'ps-list-creations' : ''}`}>
+          <ol className="ps-list">
             {section.projects.map((project, i) => {
               const key = `${section.slug}-${i}`;
 
               if (section.slug === 'creations') {
+                const primary = project.links.find((l) => l.primary) || project.links[0];
+                let host = '';
+                try {
+                  host = primary ? new URL(primary.url).host.replace(/^www\./, '') : '';
+                } catch (e) {
+                  host = '';
+                }
+
                 return (
-                  <li key={i} className="ps-creation-row" data-section={section.slug}>
-                    <PickMeCard project={project} />
+                  <li
+                    key={i}
+                    className="ps-item ps-item-creation"
+                    data-section={section.slug}
+                  >
+                    <span className="ps-item-index" aria-hidden="true">
+                      {(i + 1).toString().padStart(2, '0')}
+                    </span>
+
+                    <a
+                      href={primary ? primary.url : '#'}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="ps-creation-link"
+                    >
+                      <div className="ps-creation-statusbar">
+                        <span className="ps-creation-status-left">
+                          {project.isLive && (
+                            <>
+                              <span className="ps-creation-status-dot" aria-hidden="true" />
+                              <span className="ps-creation-status-live">live</span>
+                              <span className="ps-creation-status-sep" aria-hidden="true">/</span>
+                            </>
+                          )}
+                          {host && (
+                            <span className="ps-creation-status-host">{host}</span>
+                          )}
+                        </span>
+                        <span className="ps-creation-status-right">
+                          <span className="ps-creation-status-date">{project.date}</span>
+                          <span className="ps-creation-status-arrow" aria-hidden="true">
+                            <ArrowIcon />
+                          </span>
+                        </span>
+                      </div>
+
+                      <div className="ps-creation-body">
+                        <h3 className="ps-creation-title">
+                          {(() => {
+                            const parts = project.title.trim().split(/\s+/);
+                            const first = parts[0];
+                            const rest = parts.slice(1).join(' ');
+                            return (
+                              <>
+                                <span className="ps-creation-title-lead">{first}</span>
+                                {rest && (
+                                  <>
+                                    {' '}
+                                    <span className="ps-creation-title-em">{rest}</span>
+                                  </>
+                                )}
+                                <span className="ps-creation-title-dot" aria-hidden="true">.</span>
+                              </>
+                            );
+                          })()}
+                        </h3>
+                        <p className="ps-creation-description">{project.description}</p>
+                      </div>
+                    </a>
                   </li>
                 );
               }
