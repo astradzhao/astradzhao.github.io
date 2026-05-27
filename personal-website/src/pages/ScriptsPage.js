@@ -1,175 +1,171 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Pages.css';
 import './ScriptsPage.css';
 
-function ScriptsPage() {
-  const [expandedIndex, setExpandedIndex] = useState(null);
+const ArrowIcon = () => (
+  <svg
+    className="ps-arrow"
+    width="12"
+    height="12"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    aria-hidden="true"
+  >
+    <line x1="7" y1="17" x2="17" y2="7"></line>
+    <polyline points="7 7 17 7 17 17"></polyline>
+  </svg>
+);
 
-  const projects = [
+function ScriptsPage() {
+  const research = [
     {
-      title: (
-        <>
-          <em>Steering AR Music Generation with RFMs. </em>< strong>(ICLR 2026)</strong>
-        </>
-      ),
-      type: "Research",
-      date: "JAN 2026",
+      kind: "Conference Paper",
+      venue: "ICLR 2026",
+      title: "Steering AR Music Generation with RFMs",
+      date: "Jan 2026",
       description: (
         <>
-          First-author ICLR 2026 paper on guided music generation using recursive feature machines (RFMs) with <a href="https://zacharynovack.github.io/" target="_blank" rel="noopener noreferrer" className="default-link">Zachary Novack</a>, <a href="https://dmbeaglehole.github.io/" target="_blank" rel="noopener noreferrer" className="default-link">Daniel Beaglehole</a>, and <a href="https://cseweb.ucsd.edu/~tberg/" target="_blank" rel="noopener noreferrer" className="default-link">Prof. Taylor Berg-Kirkpatrick</a>! Our goal is to develop a way to guide music generation towards more interpretable outputs. 
-          We hope to extend this framework to <a href="https://github.com/magenta/magenta-realtime" target="_blank" rel="noopener noreferrer" className="default-link">real-time audio generation</a> in the future.
+          First-author ICLR 2026 paper on guided music generation using recursive feature machines (RFMs) with <a href="https://zacharynovack.github.io/" target="_blank" rel="noopener noreferrer" className="default-link">Zachary Novack</a>, <a href="https://dmbeaglehole.github.io/" target="_blank" rel="noopener noreferrer" className="default-link">Daniel Beaglehole</a>, and <a href="https://cseweb.ucsd.edu/~tberg/" target="_blank" rel="noopener noreferrer" className="default-link">Prof. Taylor Berg-Kirkpatrick</a>. Our goal is to develop a way to guide music generation towards more interpretable outputs. We hope to extend this framework to <a href="https://github.com/magenta/magenta-realtime" target="_blank" rel="noopener noreferrer" className="default-link">real-time audio generation</a> in the future.
         </>
       ),
-      link: "https://arxiv.org/abs/2510.19127",
-      linkText: "View on Arxiv",
-      link2: "https://astradzhao.github.io/MusicRFMPage/",
-      linkText2: "View Audio Samples",
-      link3: "https://github.com/astradzhao/music-rfm",
-      linkText3: "Open Source Code"
+      links: [
+        { url: "https://arxiv.org/abs/2510.19127", label: "View on Arxiv", primary: true },
+        { url: "https://astradzhao.github.io/MusicRFMPage/", label: "Audio Samples" },
+        { url: "https://github.com/astradzhao/music-rfm", label: "Source Code" }
+      ]
     },
     {
-      title: (
-        <span style={{ fontSize: "0.9em" }}>
-          <em>Benchmarking Scientific Understanding and Reasoning for Video Generation using VideoScience-Bench</em> (pending ECCV 2026)
-        </span>
-      ),
-      type: "Research",
-      date: "OCT 2025",
+      kind: "Draft",
+      venue: "Pending ECCV 2026",
+      title: "Benchmarking Scientific Understanding and Reasoning for Video Generation using VideoScience-Bench",
+      date: "Oct 2025",
       description: "Briefly contributed to development of VideoScience-Bench, an open-source auto-eval physics reasoning benchmark for video generation.",
-      link: `${process.env.PUBLIC_URL}/files/pdfs/videosciencebench.pdf`,
-      linkText: "View Draft PDF"
+      links: [
+        { url: `${process.env.PUBLIC_URL}/files/pdfs/videosciencebench.pdf`, label: "View Draft PDF", primary: true }
+      ]
     },
     {
-      title: <em>CoT Reasoning with Sparse Autoencoder-Guided Generation</em>,
-      type: "Research",
-      date: "FEB 2025",
-      description: "Co-first author paper on generating better chain-of-thought reasoning with clustering and sparse autoencoders!",
-      link: "https://arxiv.org/abs/2510.01528",
-      linkText: "View on Arxiv"
+      kind: "Preprint",
+      venue: "Arxiv",
+      title: "CoT Reasoning with Sparse Autoencoder-Guided Generation",
+      date: "Feb 2025",
+      description: "Co-first author paper on generating better chain-of-thought reasoning with clustering and sparse autoencoders.",
+      links: [
+        { url: "https://arxiv.org/abs/2510.01528", label: "View on Arxiv", primary: true }
+      ]
     },
     {
-      title: "MancalaBot",
-      type: "Academic",
-      date: "FEB 2025",
-      description: "For a course final project (CSE 251B: Deep Learning) at UCSD, my team implemented a Mancala bot using MCTS, AlphaZero-esque training, and a custom policy network.",
-      link: "https://github.com/PlayerEugene/cse151b251b-wi25-pa5-teamteam",
-      linkText: "View on GitHub"
-    },
-    {
-      title: "Learner App",
-      type: "Personal",
-      date: "2024 - NOW",
-      description: "I have been on & off working on an app that helps language learners improve vocabulary retention and contextual understanding through an LLM-powered interactive translation practice tool!",
-      link: "https://github.com/learner-app/base-app/tree/main",
-      linkText: "View on GitHub"
-    },
-    {
-      title: "Consistency LLMs with Hao AI Lab",
-      type: "Research",
-      date: "JUN 2024",
+      kind: "Open Source",
+      venue: "Hao AI Lab",
+      title: "Consistency LLMs",
+      date: "Jun 2024",
       description: (
         <>
-          I worked a bit with <a href="https://snyhlxde1.github.io/" target="_blank" rel="noopener noreferrer" className="default-link">Lanxiang Hu</a> and the Hao AI Lab at UCSD on the implementation of Consistency Large Language models, specifically in regards to optimizing its fine-tuning and testing its compatability with qLoRA.
+          I worked with <a href="https://snyhlxde1.github.io/" target="_blank" rel="noopener noreferrer" className="default-link">Lanxiang Hu</a> and the Hao AI Lab at UCSD on the implementation of Consistency Large Language Models, specifically optimizing fine-tuning and testing its compatibility with qLoRA.
         </>
       ),
-      link: "https://github.com/hao-ai-lab/Consistency_LLM",
-      linkText: "View on GitHub"
-    },
-    {
-      title: "xv6-riscv OS",
-      type: "Academic",
-      date: "DEC 2023",
-      description: "I implemented a basic version of an xv6-riscv operating system for a Yonsei University class.",
-      link: "https://github.com/astradzhao/xv6-os",
-      linkText: "View on GitHub"
-    },
-    {
-      title: "Bear's Bobaria",
-      type: "Personal",
-      date: "DEC 2021",
-      description: "Just for fun! With a group of others, I made a small little point-and-click time management game called Bear's Bobaria in Unity, akin to Papa's Pizzeria.",
-      link: "https://github.com/astradzhao/bobaShopv2",
-      linkText: "View on GitHub"
+      links: [
+        { url: "https://github.com/hao-ai-lab/Consistency_LLM", label: "View on GitHub", primary: true }
+      ]
     }
   ];
 
-  const handleCardClick = (index) => {
-    setExpandedIndex(expandedIndex === index ? null : index);
-  };
+  const creations = [
+    {
+      kind: "Web App",
+      venue: "New York City",
+      title: "Pick Me",
+      date: "May 2026",
+      isLive: true,
+      description: "A randomized place picker for Manhattan — set your filters and let it nudge you somewhere new. For when you can't decide where to go.",
+      links: [
+        { url: "https://pick-me-delta.vercel.app/", label: "Try it Live", primary: true }
+      ]
+    }
+  ];
+
+  const sections = [
+    { name: "Research", slug: "research", projects: research },
+    { name: "Creations", slug: "creations", projects: creations }
+  ];
 
   return (
     <div className='page-container-scripts'>
-      <div className="projects-header">
-        <h2 className="projects-title">My Projects & Research</h2>
-        <p className="projects-subtitle">Selected collection of some of my work, research, and personal projects. Click to expand and learn more!</p>
-      </div>
-      
-      <div className="projects-list">
-        {projects.map((project, index) => (
-          <div 
-            key={index}
-            className={`project-item ${expandedIndex === index ? 'expanded' : ''}`}
-            data-type={project.type}
-          >
-            <div 
-              className="project-header"
-              onClick={() => handleCardClick(index)}
-            >
-              <div className="project-header-content">
-                <h3 className="project-title">{project.title}</h3>
-                <div className="project-meta">
-                  <span className="project-date">{project.date}</span>
-                  <span className="project-type">{project.type}</span>
+      {sections.map((section) => (
+        <section key={section.slug} className="ps-section" data-section={section.slug}>
+          <header className="ps-section-header">
+            <h2 className="ps-section-label">{section.name}</h2>
+            <span className="ps-section-rule" aria-hidden="true"></span>
+            <span className="ps-section-count">
+              {section.projects.length.toString().padStart(2, '0')}
+            </span>
+          </header>
+
+          <ol className="ps-list">
+            {section.projects.map((project, i) => (
+              <li
+                key={i}
+                className="ps-item"
+                data-section={section.slug}
+              >
+                <span className="ps-item-index" aria-hidden="true">
+                  {(i + 1).toString().padStart(2, '0')}
+                </span>
+
+                <div className="ps-item-content">
+                  <div className="ps-item-meta-row">
+                    <div className="ps-item-tags">
+                      {project.kind && (
+                        <span className="ps-tag ps-tag-kind">{project.kind}</span>
+                      )}
+                      {project.venue && (
+                        <span className="ps-tag-divider" aria-hidden="true">·</span>
+                      )}
+                      {project.venue && (
+                        <span className="ps-tag ps-tag-venue">{project.venue}</span>
+                      )}
+                      {project.isLive && (
+                        <span className="ps-tag-live" aria-label="Live deployed project">
+                          <span className="ps-live-dot" aria-hidden="true"></span>
+                          Live
+                        </span>
+                      )}
+                    </div>
+                    <span className="ps-item-date">{project.date}</span>
+                  </div>
+
+                  <h3 className="ps-item-title">{project.title}</h3>
+
+                  <div className="ps-item-description">
+                    {project.description}
+                  </div>
+
+                  <div className="ps-item-actions">
+                    {project.links.map((link, j) => (
+                      <a
+                        key={j}
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`ps-action ${link.primary ? 'ps-action-primary' : 'ps-action-ghost'}`}
+                      >
+                        <span>{link.label}</span>
+                        <ArrowIcon />
+                      </a>
+                    ))}
+                  </div>
                 </div>
-              </div>
-              <div className="expand-icon">
-                {expandedIndex === index ? '−' : '+'}
-              </div>
-            </div>
-            
-            <div className="project-content">
-              <div className="project-description">
-                {project.description}
-              </div>
-              <div className="project-links">
-                <a 
-                  href={project.link} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="project-link"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  {project.linkText} →
-                </a>
-                {project.link2 && (
-                  <a 
-                    href={project.link2} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="project-link project-link-secondary"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    {project.linkText2} →
-                  </a>
-                )}
-                {project.link3 && (
-                  <a 
-                    href={project.link3} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="project-link project-link-secondary"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    {project.linkText3} →
-                  </a>
-                )}
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
+              </li>
+            ))}
+          </ol>
+        </section>
+      ))}
     </div>
   );
 }
-  
+
 export default ScriptsPage;
