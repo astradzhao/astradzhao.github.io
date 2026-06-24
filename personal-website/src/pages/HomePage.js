@@ -15,7 +15,7 @@ function HomePage() {
             loading="eager"
           />
           <div className='text-content'>
-            <h1 className='page-text'>I am currently a founding engineer at <a href="https://axilon.com/" target="_blank" rel="noopener noreferrer" className="default-link">Axilon</a>. I've dabbled in machine learning research, and I'm also a cellist & traveler.</h1>
+            <h1 className='page-text'>I am currently a Member of Technical Staff at <a href="https://axilon.com/" target="_blank" rel="noopener noreferrer" className="default-link">Axilon</a>. I've dabbled in machine learning research, and I'm also a cellist & traveler. I love working on interesting problems.</h1>
             <p className='page-text2'>
               Learn more <Link to="/me" className="default-link">about me</Link> or check out my <Link to="/scripts" className="default-link">projects and research</Link>.
             </p>

@@ -56,8 +56,8 @@ function ScriptsPage() {
       ]
     },
     {
-      kind: "Draft",
-      venue: "Pending ECCV 2026",
+      kind: "Conference Paper",
+      venue: "ECCV 2026",
       title: "Benchmarking Scientific Understanding and Reasoning for Video Generation using VideoScience-Bench",
       date: "Oct 2025",
       description: "Briefly contributed to development of VideoScience-Bench, an open-source auto-eval physics reasoning benchmark for video generation.",
