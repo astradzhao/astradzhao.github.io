@@ -92,22 +92,22 @@ function ScriptsPage() {
     }
   ];
 
-  const creations = [
-    {
-      kind: "Web App",
-      venue: "New York City",
-      title: "Pick Me",
-      date: "May 2026",
-      isLive: true,
-      description: "A randomized place picker for Manhattan — set your filters and let it nudge you somewhere new. For when you can't decide where to go.",
-      links: [
-        { url: "https://pick-me-delta.vercel.app/", label: "Try it Live", primary: true }
-      ]
-    }
-  ];
+  // const creations = [
+  //   {
+  //     kind: "Web App",
+  //     venue: "New York City",
+  //     title: "Pick Me",
+  //     date: "May 2026",
+  //     isLive: true,
+  //     description: "A randomized place picker for Manhattan — set your filters and let it nudge you somewhere new. For when you can't decide where to go.",
+  //     links: [
+  //       { url: "https://pick-me-delta.vercel.app/", label: "Try it Live", primary: true }
+  //     ]
+  //   }
+  // ];
 
   const sections = [
-    { name: "Creations", slug: "creations", projects: creations },
+    // { name: "Creations", slug: "creations", projects: creations },
     { name: "Research", slug: "research", projects: research }
   ];
 
