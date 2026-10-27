@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import './Pages.css';
 import './HomePage.css';
 import '../pages/ScriptsPage.css';
@@ -15,12 +15,12 @@ function HomePage() {
             loading="eager"
           />
           <div className='text-content'>
-            <h1 className='page-text'>I am currently a Member of Technical Staff at <a href="https://axilon.com/" target="_blank" rel="noopener noreferrer" className="default-link">Axilon</a>. I've dabbled in machine learning research, and I'm also a cellist & traveler. I love working on interesting problems.</h1>
+            <h1 className='page-text'>I am currently a Founding Member of Technical Staff at <a href="https://axilon.com/" target="_blank" rel="noopener noreferrer" className="default-link">Axilon</a>. I've dabbled in machine learning research, and I'm also a cellist & traveler. I love working on interesting problems.</h1>
             <p className='page-text2'>
               Learn more <Link to="/me" className="default-link">about me</Link> or check out my <Link to="/scripts" className="default-link">projects and research</Link>.
             </p>
             <br></br>
-            <p className='page-text3'>You can contact me at danielzhao02@gmail.com. Here's my <a href={`${process.env.PUBLIC_URL}/files/pdfs/daniel_zhao_resume.pdf`} target="_blank" rel="noopener noreferrer" className="default-link">resume</a>.</p>
+            <p className='page-text3'>You can contact me at danielzhao02@gmail.com. Here's my <a href={`${process.env.PUBLIC_URL}/files/pdfs/daniel-zhao-cv.pdf`} target="_blank" rel="noopener noreferrer" className="default-link">CV</a>.</p>
           </div>
         </section>
       </main>
