@@ -29,8 +29,8 @@
     }
 
     .profile-image {
-      width: 50vw;
-      margin-bottom: 3vh;
+      width: clamp(110px, 35vw, 160px);
+      margin-bottom: 2vh;
     }
 
     .text-content {

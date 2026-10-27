@@ -49,30 +49,8 @@
         padding-top: 0.6vh;
     }
 
-    .social-icons {
-        margin: 0;
-        gap: 3vmax;
-    }
-
     .social-icon {
         transform: scale(1.2);
-    }
-
-    .mobile-only {
-        display: flex !important;
-        position: absolute !important;
-        bottom: -98vh;
-        right: -35vw;
-        width: 100%;
-        background-color: transparent;
-        padding: 2vh 0;
-        justify-content: center;
-        z-index: 1000;
-        margin-top: 1vh;
-    }
-
-    .desktop-only {
-        display: none !important;
     }
 }
 
@@ -121,11 +99,15 @@
 transform: scale(1.2);
 }
 
-.mobile-only {
-    display: none;
+.cv-link {
+    color: black;
+    text-decoration: none;
+    font-size: 1.5vmax;
+    font-weight: 600;
+    line-height: 1;
 }
 
-.desktop-only {
+.navbar-icons {
     display: block;
     margin-right: 0;
     margin-left: 15vw;
@@ -133,4 +115,16 @@ transform: scale(1.2);
     margin-bottom: -0.5vh;
     position: relative;
     text-align: right;
+}
+
+/* Kept after the base rules above so these overrides win on small screens. */
+@media screen and (max-width: 768px) {
+    .navbar-icons {
+        margin: 1vh 0 0;
+        text-align: center;
+    }
+
+    .social-icons {
+        gap: 3vmax;
+    }
 }

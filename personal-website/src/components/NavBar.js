@@ -32,7 +32,11 @@ const GitHubIcon = ({ url }) => (
     </a>
 );
 
-
+const CVLink = () => (
+    <a href={`${process.env.PUBLIC_URL}/files/pdfs/daniel-zhao-cv.pdf`} target="_blank" rel="noopener noreferrer" className="social-icon cv-link" style={iconStyle}>
+      CV
+    </a>
+);
 
 function NavBar() {
   const [hoveredLink, setHoveredLink] = useState('');
@@ -89,19 +93,13 @@ function NavBar() {
             </NavLink>
           ))}
         </div>
-        <div className="desktop-only">
+        <div className="navbar-icons">
           <div className="social-icons">
+            <CVLink />
             <LinkedInIcon url={'https://www.linkedin.com/in/danzhao02/'} />
             <InstagramIcon url={'https://www.instagram.com/astradphotos/'} />
             <GitHubIcon url={'https://github.com/astradzhao'} />
           </div>
-        </div>
-      </div>
-      <div className="mobile-only">
-        <div className="social-icons">
-          <LinkedInIcon url={'https://www.linkedin.com/in/danzhao02/'} />
-          <InstagramIcon url={'https://www.instagram.com/astradphotos/'} />
-          <GitHubIcon url={'https://github.com/astradzhao'} />
         </div>
       </div>
     </div>
