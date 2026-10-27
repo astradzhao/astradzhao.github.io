@@ -25,17 +25,17 @@ Machine Learning, Agentic Systems, System Design, LLM Evals, Knowledge Graphs, R
 - Built deterministic ingestion pipelines for proprietary SCADA/PLC projects (Ignition, Rockwell, Mitsubishi, Motoman) and CAD, plus multi-agent ingestion pipelines for scanned plant-structure and production documents, translating them into a unified Neo4j knowledge graph
 - Led technical deployment strategy for **3+ large manufacturing enterprises**, owning AWS and Azure infrastructure through Terraform, with forward-deployed work and training sessions for maintenance and line leaders on the factory floor
 - Designed and shipped agentic harnesses for ingestion, plant query, and root cause analysis, enabling **scalable, VM-isolated, multi-tenant** agent execution over the ontology in TS & Golang; harnesses combined multi-agent frameworks with specialized tools, human-in-the-loop approval, orchestrators, reviewer agents, and deterministic validation
+- Created **LLM-as-a-judge & deterministic evals alongside FactorySim**, a synthetic factory with causal ground truth, to benchmark agent root-cause accuracy across models in CI
 - Saved **over 70% of LLM costs** by adding auto-compaction & token caching, parallelizing tool calls, and introducing dynamic model routing
 - Architected Git-style version control for the graph: branching on Neo4j multi-database, commit history, 3-way merges with field-level and agent-assisted conflict resolution, and revert/restore
 - Built the real-time plant data layer (OPC UA/Ignition tag acquisition, TimescaleDB historian, trigger evaluation), handling 100,000s of real-time tags as fundamental context for agents
-- Created **LLM-as-a-judge & deterministic evals alongside FactorySim**, a synthetic factory with causal ground truth, to benchmark agent root-cause accuracy across models in CI
 
 ### Applied ML Engineer (Contract) | Outerproduct | Feb 2026 – Apr 2026
 
 - Performed **distributed training and steering of LLMs from 8B to 119B parameters** (Llama 3.1/3.3, Mistral Small 3.1/4) with recursive feature machines, learning per-layer concept directions and steering coefficients toward a target persona
 - Added Mistral Small 4 support via a custom FP8-to-BF16 dequantization loader and a streaming filter for reasoning traces; stabilized multi-GPU RFM training with device-placement fixes and a kernel bandwidth/regularization search
-- Generated persona training data with Claude Sonnet 4.5 and a GPT-5-mini simulated user after finding ~67% of prior responses reused the same openers, and built multi-turn steered-conversation evals
-- Served steered persona variants (casual, offbeat, no-questions) on RunPod (4x A100) and Modal sandboxes with Vercel frontends, shipping a Dockerized CUDA environment
+- Generated a **500+ example synthetic training dataset** using Claude Sonnet 4.5 and a GPT-5-mini simulated user after finding ~67% of prior responses reused the same openers, and built **multi-turn steered-conversation evals**
+- Served steered persona variants on RunPod (4x A100) and Modal sandboxes with Vercel frontends, shipping a Dockerized CUDA environment
 
 ### Machine Learning Engineer Intern | Qualcomm | Jun 2025 – Sep 2025
 
