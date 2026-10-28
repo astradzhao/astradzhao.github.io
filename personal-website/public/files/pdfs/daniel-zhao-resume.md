@@ -88,7 +88,7 @@ Lanxiang Hu, Abhilash Shankarampeta, Yixin Huang, Zilin Dai, Haoyang Yu, Yujie Z
 
 *Preprint, 2025* | [arXiv:2510.01528](https://arxiv.org/abs/2510.01528)
 
-**Daniel Zhao**\*, Abhilash Shankarampeta\*, Lanxiang Hu\*, Tajana Rosing, Hao Zhang (\*equal contribution)
+**Daniel Zhao**\*, Abhilash Shankarampeta\*, Lanxiang Hu\*, Tajana Rosing, Hao Zhang
 
 - Trained SAEs on LLM token representations to build a cluster-transition graph of correct reasoning traces, using it as a scalable reward model for guiding CoT generation on GSM8K and HumanEval datasets
 

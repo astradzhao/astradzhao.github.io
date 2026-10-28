@@ -11,6 +11,7 @@
 
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
 \raggedbottom
 \raggedright
 
@@ -28,13 +29,13 @@
 % #1 = title, #2 = arXiv id, #3 = venue, #4 = authors
 \newcommand{\paper}[4]{%
   \needspace{6\baselineskip}%
-  \textbf{\href{https://arxiv.org/abs/#2}{#1}}\par\vspace{2pt}
-  \textit{#3}\ \textbar\ \href{https://arxiv.org/abs/#2}{arXiv:#2}\par\vspace{2pt}
-  {\small #4\par}}
+  \textbf{\href{https://arxiv.org/abs/#2}{#1}}\par
+  \textit{#3}\ \textbar\ \href{https://arxiv.org/abs/#2}{arXiv:#2}\par
+  {\fontsize{10pt}{13pt}\selectfont #4\par}}
 
 \newenvironment{bullets}
-  {\begin{itemize}[leftmargin=1.2em, label=\textbullet, itemsep=1.5pt, parsep=0pt, topsep=1pt]}
-  {\end{itemize}\vspace{6.5pt}}
+  {\begin{itemize}[leftmargin=1.2em, label=\textbullet, itemsep=1.5pt, parsep=0pt, topsep=2.5pt, partopsep=0pt]}
+  {\end{itemize}\vspace{7.7pt}}
 
 \newenvironment{skills}
   {\begin{description}[leftmargin=0pt, labelindent=0pt, font=\normalfont\bfseries, itemsep=3pt, parsep=0pt, topsep=0pt]}
@@ -42,12 +43,13 @@
 
 \begin{document}
 
-\begin{center}
+{\centering
   {\fontsize{22pt}{26pt}\selectfont\scshape Daniel Zhao}\\[6pt]
   \href{mailto:danielzhao02@gmail.com}{danielzhao02@gmail.com}\ \textbar\ %
   \href{https://astradzhao.github.io/}{astradzhao.github.io}\ \textbar\ %
   \href{https://www.linkedin.com/in/danzhao02/}{linkedin.com/in/danzhao02}
-\end{center}
+\par}
+\vspace{0pt}
 
 \section{Education}
 
@@ -131,14 +133,14 @@
 
 \paper{Benchmarking Scientific Understanding and Reasoning for Video Generation using VideoScience-Bench}{2512.02942}
   {ECCV 2026}
-  {\fontsize{9pt}{11pt}\selectfont Lanxiang Hu, Abhilash Shankarampeta, Yixin Huang, Zilin Dai, Haoyang Yu, Yujie Zhao, Haoqiang Kang, \textbf{Daniel Zhao}, Tajana Rosing, Hao Zhang}
+  {\fontsize{9pt}{13pt}\selectfont Lanxiang Hu, Abhilash Shankarampeta, Yixin Huang, Zilin Dai, Haoyang Yu, Yujie Zhao, Haoqiang Kang, \textbf{Daniel Zhao}, Tajana Rosing, Hao Zhang}
 \begin{bullets}
   \item Contributed to VideoScience-Bench, the \textbf{first benchmark to evaluate video models as zero-shot scientific reasoners}, evaluating seven SOTA models and building VideoScience-Judge, a VLM-based judge correlated with expert annotations
 \end{bullets}
 
 \paper{Towards Interpretable and Inference-Optimal CoT Reasoning with Sparse Autoencoder-Guided Generation}{2510.01528}
   {Preprint, 2025}
-  {\textbf{Daniel Zhao}$^{*}$, Abhilash Shankarampeta$^{*}$, Lanxiang Hu$^{*}$, Tajana Rosing, Hao Zhang \quad ($^{*}$equal contribution)}
+  {\textbf{Daniel Zhao}$^{*}$, Abhilash Shankarampeta$^{*}$, Lanxiang Hu$^{*}$, Tajana Rosing, Hao Zhang}
 \begin{bullets}
   \item Trained SAEs on LLM token representations to build a cluster-transition graph of correct reasoning traces, using it as a scalable reward model for guiding CoT generation on GSM8K and HumanEval datasets
 \end{bullets}
