@@ -20,7 +20,7 @@ function HomePage() {
               Learn more <Link to="/me" className="default-link">about me</Link> or check out my <Link to="/scripts" className="default-link">projects and research</Link>.
             </p>
             <br></br>
-            <p className='page-text3'>You can contact me at danielzhao02@gmail.com. Here's my <a href={`${process.env.PUBLIC_URL}/files/pdfs/daniel-zhao-cv.pdf`} target="_blank" rel="noopener noreferrer" className="default-link">CV</a>.</p>
+            <p className='page-text3'>You can contact me at danielzhao02@gmail.com. Here's my <a href={`${process.env.PUBLIC_URL}/files/pdfs/daniel-zhao-resume.pdf`} target="_blank" rel="noopener noreferrer" className="default-link">resume</a>.</p>
           </div>
         </section>
       </main>

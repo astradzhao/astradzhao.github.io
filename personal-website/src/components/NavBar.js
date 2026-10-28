@@ -32,9 +32,12 @@ const GitHubIcon = ({ url }) => (
     </a>
 );
 
-const CVLink = () => (
-    <a href={`${process.env.PUBLIC_URL}/files/pdfs/daniel-zhao-cv.pdf`} target="_blank" rel="noopener noreferrer" className="social-icon cv-link" style={iconStyle}>
-      CV
+const ResumeIcon = () => (
+    <a href={`${process.env.PUBLIC_URL}/files/pdfs/daniel-zhao-resume.pdf`} target="_blank" rel="noopener noreferrer" className="social-icon" style={iconStyle} aria-label="Resume" title="Resume">
+      <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="2vmax" height="2vmax" viewBox="0 0 48 48">
+        <path fillRule="evenodd" d="M 12 4 L 28 4 L 28 12 A 4 4 0 0 0 32 16 L 38 16 L 38 42 A 2 2 0 0 1 36 44 L 12 44 A 2 2 0 0 1 10 42 L 10 6 A 2 2 0 0 1 12 4 z M 16 22 L 32 22 L 32 25 L 16 25 z M 16 29 L 32 29 L 32 32 L 16 32 z M 16 36 L 26 36 L 26 39 L 16 39 z"></path>
+        <path d="M 31 5 L 37 11 L 33 11 A 2 2 0 0 1 31 9 z"></path>
+      </svg>
     </a>
 );
 
@@ -95,7 +98,7 @@ function NavBar() {
         </div>
         <div className="navbar-icons">
           <div className="social-icons">
-            <CVLink />
+            <ResumeIcon />
             <LinkedInIcon url={'https://www.linkedin.com/in/danzhao02/'} />
             <InstagramIcon url={'https://www.instagram.com/astradphotos/'} />
             <GitHubIcon url={'https://github.com/astradzhao'} />

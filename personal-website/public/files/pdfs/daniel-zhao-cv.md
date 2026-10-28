@@ -22,10 +22,10 @@ Machine Learning, Agentic Systems, System Design, LLM Evals, Knowledge Graphs, R
 
 ### Founding Member of Technical Staff | Axilon | Dec 2025 – Present
 
-- Built deterministic ingestion pipelines for proprietary SCADA/PLC projects (Ignition, Rockwell, Mitsubishi, Motoman) and CAD, plus multi-agent ingestion pipelines for scanned plant-structure and production documents, translating them into a unified Neo4j knowledge graph
+- Built deterministic and multi-agent ingestion pipelines for proprietary industrial control systems (Ignition, Rockwell, Mitsubishi), CAD, and scanned factory documents, unifying operational data in a Neo4j knowledge graph
 - Led technical deployment strategy for **3+ large manufacturing enterprises**, owning AWS and Azure infrastructure through Terraform, with forward-deployed work and training sessions for maintenance and line leaders on the factory floor
 - Designed and shipped agentic harnesses for ingestion, plant query, and root cause analysis, enabling **scalable, VM-isolated, multi-tenant** agent execution over the ontology in TS & Golang; harnesses combined multi-agent frameworks with specialized tools, human-in-the-loop approval, orchestrators, reviewer agents, and deterministic validation
-- Created **LLM-as-a-judge & deterministic evals alongside FactorySim**, a synthetic factory with causal ground truth, to benchmark agent root-cause accuracy across models in CI
+- Created **LLM-as-a-judge & deterministic evals alongside FactorySim**, a synthetic factory with causal ground truth, to benchmark agent root-cause accuracy across various SOTA foundation models
 - Saved **over 70% of LLM costs** by adding auto-compaction & token caching, parallelizing tool calls, and introducing dynamic model routing
 - Architected Git-style version control for the graph: branching on Neo4j multi-database, commit history, 3-way merges with field-level and agent-assisted conflict resolution, and revert/restore
 - Built the real-time plant data layer (OPC UA/Ignition tag acquisition, TimescaleDB historian, trigger evaluation), handling 100,000s of real-time tags as fundamental context for agents
@@ -41,8 +41,8 @@ Machine Learning, Agentic Systems, System Design, LLM Evals, Knowledge Graphs, R
 
 - Architected a multimodal RAG system through LangChain, utilizing **ONNX-based CLIP embeddings, a FAISS vector store, and Qwen2.5-VL**
 - Deployed the system on a Qualcomm-native CPU machine, benchmarking against a CUDA host on recent visual QA datasets (Haystacks, ViDoRe, MRAG-Bench) using a self-built LLM-as-a-judge framework with a smaller judge model
-- Cross-compiled Llama.cpp for the Qualcomm Adreno GPU and **quantized a 7B Qwen2.5-VL-Instruct model to Q4_0**, achieving over 10x speedup from baseline CPU
-- Extensively profiled and **fixed a CLIP projection encoding bottleneck in Llama.cpp C++ binaries**, achieving 5x speedup from the naive solution; adjusted matmul sizes via tiling to reach optimal performance on each target chip
+- Cross-compiled Llama.cpp for Qualcomm Adreno GPUs and **quantized a 7B Qwen2.5-VL-Instruct model to Q4_0**, achieving **10x speedup** over baseline CPU implementation
+- Profiled and **optimized CLIP projection encoding in C++**, achieving **5x speedup** over the naive method through bottleneck analysis and matrix-multiplication tiling
 
 ### Teaching Assistant | UC San Diego | Dec 2024 – Dec 2025
 
@@ -75,7 +75,7 @@ Machine Learning, Agentic Systems, System Design, LLM Evals, Knowledge Graphs, R
 
 ### [Steering Autoregressive Music Generation with Recursive Feature Machines](https://arxiv.org/abs/2510.19127)
 
-*ICLR 2026, first author* | [arXiv:2510.19127](https://arxiv.org/abs/2510.19127) | Jan 2026
+*ICLR 2026, first author* | [arXiv:2510.19127](https://arxiv.org/abs/2510.19127)
 
 **Daniel Zhao**, Daniel Beaglehole, Taylor Berg-Kirkpatrick, Julian McAuley, Zachary Novack
 
@@ -86,7 +86,7 @@ Machine Learning, Agentic Systems, System Design, LLM Evals, Knowledge Graphs, R
 
 ### [Benchmarking Scientific Understanding and Reasoning for Video Generation using VideoScience-Bench](https://arxiv.org/abs/2512.02942)
 
-*ECCV 2026* | [arXiv:2512.02942](https://arxiv.org/abs/2512.02942) | Dec 2025
+*ECCV 2026* | [arXiv:2512.02942](https://arxiv.org/abs/2512.02942)
 
 Lanxiang Hu, Abhilash Shankarampeta, Yixin Huang, Zilin Dai, Haoyang Yu, Yujie Zhao, Haoqiang Kang, **Daniel Zhao**, Tajana Rosing, Hao Zhang
 
@@ -96,7 +96,7 @@ Lanxiang Hu, Abhilash Shankarampeta, Yixin Huang, Zilin Dai, Haoyang Yu, Yujie Z
 
 ### [Towards Interpretable and Inference-Optimal CoT Reasoning with Sparse Autoencoder-Guided Generation](https://arxiv.org/abs/2510.01528)
 
-*Preprint* | [arXiv:2510.01528](https://arxiv.org/abs/2510.01528) | Feb 2025
+*Preprint, 2025* | [arXiv:2510.01528](https://arxiv.org/abs/2510.01528)
 
 **Daniel Zhao**\*, Abhilash Shankarampeta\*, Lanxiang Hu\*, Tajana Rosing, Hao Zhang (\*equal contribution)
 
@@ -106,7 +106,7 @@ Lanxiang Hu, Abhilash Shankarampeta, Yixin Huang, Zilin Dai, Haoyang Yu, Yujie Z
 
 ### [CLLMs: Consistency Large Language Models](https://arxiv.org/abs/2403.00835)
 
-*ICML 2024, open-source contributor* | [arXiv:2403.00835](https://arxiv.org/abs/2403.00835) | Jun 2024
+*ICML 2024, open-source contributor* | [arXiv:2403.00835](https://arxiv.org/abs/2403.00835)
 
 Siqi Kou, Lanxiang Hu, Zhezhi He, Zhijie Deng, Hao Zhang
 
