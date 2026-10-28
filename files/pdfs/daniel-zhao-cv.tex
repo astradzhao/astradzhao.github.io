@@ -25,12 +25,12 @@
 % #1 = detail line, #2 = right-aligned note
 \newcommand{\detail}[2]{\textit{#1}\hfill{#2}\par}
 
-% #1 = title, #2 = arXiv id, #3 = venue, #4 = date, #5 = authors
-\newcommand{\paper}[5]{%
+% #1 = title, #2 = arXiv id, #3 = venue, #4 = authors
+\newcommand{\paper}[4]{%
   \needspace{6\baselineskip}%
   \textbf{\href{https://arxiv.org/abs/#2}{#1}}\par
-  \textit{#3}\ \textbar\ \href{https://arxiv.org/abs/#2}{arXiv:#2}\hfill{#4}\par
-  {\small #5\par}}
+  \textit{#3}\ \textbar\ \href{https://arxiv.org/abs/#2}{arXiv:#2}\par
+  {\small #4\par}}
 
 \newenvironment{bullets}
   {\begin{itemize}[leftmargin=1.2em, label=\textbullet, itemsep=0.5pt, parsep=0pt, topsep=2pt]}
@@ -65,10 +65,10 @@ Machine Learning, Agentic Systems, System Design, LLM Evals, Knowledge Graphs, R
 
 \entry{Founding Member of Technical Staff}{Axilon}{Dec 2025 -- Present}
 \begin{bullets}
-  \item Built deterministic ingestion pipelines for proprietary SCADA/PLC projects (Ignition, Rockwell, Mitsubishi, Motoman) and CAD, plus multi-agent ingestion pipelines for scanned plant-structure and production documents, translating them into a unified Neo4j knowledge graph
+  \item Built deterministic and multi-agent ingestion pipelines for proprietary industrial control systems (Ignition, Rockwell, Mitsubishi), CAD, and scanned factory documents, unifying operational data in a Neo4j knowledge graph
   \item Led technical deployment strategy for \textbf{3+ large manufacturing enterprises}, owning AWS and Azure infrastructure through Terraform, with forward-deployed work and training sessions for maintenance and line leaders on the factory floor
   \item Designed and shipped agentic harnesses for ingestion, plant query, and root cause analysis, enabling \textbf{scalable, VM-isolated, multi-tenant} agent execution over the ontology in TS \& Golang; harnesses combined multi-agent frameworks with specialized tools, human-in-the-loop approval, orchestrators, reviewer agents, and deterministic validation
-  \item Created \textbf{LLM-as-a-judge \& deterministic evals alongside FactorySim}, a synthetic factory with causal ground truth, to benchmark agent root-cause accuracy across models in CI
+  \item Created \textbf{LLM-as-a-judge \& deterministic evals alongside FactorySim}, a synthetic factory with causal ground truth, to benchmark agent root-cause accuracy across various SOTA foundation models
   \item Saved \textbf{over 70\% of LLM costs} by adding auto-compaction \& token caching, parallelizing tool calls, and introducing dynamic model routing
   \item Architected Git-style version control for the graph: branching on Neo4j multi-database, commit history, 3-way merges with field-level and agent-assisted conflict resolution, and revert/restore
   \item Built the real-time plant data layer (OPC UA/Ignition tag acquisition, TimescaleDB historian, trigger evaluation), handling 100,000s of real-time tags as fundamental context for agents
@@ -87,8 +87,8 @@ Machine Learning, Agentic Systems, System Design, LLM Evals, Knowledge Graphs, R
 \begin{bullets}
   \item Architected a multimodal RAG system through LangChain, utilizing \textbf{ONNX-based CLIP embeddings, a FAISS vector store, and Qwen2.5-VL}
   \item Deployed the system on a Qualcomm-native CPU machine, benchmarking against a CUDA host on recent visual QA datasets (Haystacks, ViDoRe, MRAG-Bench) using a self-built LLM-as-a-judge framework with a smaller judge model
-  \item Cross-compiled Llama.cpp for the Qualcomm Adreno GPU and \textbf{quantized a 7B Qwen2.5-VL-Instruct model to Q4\_0}, achieving over 10x speedup from baseline CPU
-  \item Extensively profiled and \textbf{fixed a CLIP projection encoding bottleneck in Llama.cpp C++ binaries}, achieving 5x speedup from the naive solution; adjusted matmul sizes via tiling to reach optimal performance on each target chip
+  \item Cross-compiled Llama.cpp for Qualcomm Adreno GPUs and \textbf{quantized a 7B Qwen2.5-VL-Instruct model to Q4\_0}, achieving \textbf{10x speedup} over baseline CPU implementation
+  \item Profiled and \textbf{optimized CLIP projection encoding in C++}, achieving \textbf{5x speedup} over the naive method through bottleneck analysis and matrix-multiplication tiling
 \end{bullets}
 
 \entry{Teaching Assistant}{UC San Diego}{Dec 2024 -- Dec 2025}
@@ -127,7 +127,7 @@ Machine Learning, Agentic Systems, System Design, LLM Evals, Knowledge Graphs, R
 \section{Research \& Publications}
 
 \paper{Steering Autoregressive Music Generation with Recursive Feature Machines}{2510.19127}
-  {ICLR 2026, first author}{Jan 2026}
+  {ICLR 2026, first author}
   {\textbf{Daniel Zhao}, Daniel Beaglehole, Taylor Berg-Kirkpatrick, Julian McAuley, Zachary Novack}
 \begin{bullets}
   \item Introduced MusicRFM, the \textbf{first framework to adapt recursive feature machines (RFMs) to text-to-music generation}, enabling fine-grained, interpretable control over a frozen MusicGen-Large model with no fine-tuning or per-step optimization
@@ -137,7 +137,7 @@ Machine Learning, Agentic Systems, System Design, LLM Evals, Knowledge Graphs, R
 \end{bullets}
 
 \paper{Benchmarking Scientific Understanding and Reasoning for Video Generation using VideoScience-Bench}{2512.02942}
-  {ECCV 2026}{Dec 2025}
+  {ECCV 2026}
   {Lanxiang Hu, Abhilash Shankarampeta, Yixin Huang, Zilin Dai, Haoyang Yu, Yujie Zhao, Haoqiang Kang, \textbf{Daniel Zhao}, Tajana Rosing, Hao Zhang}
 \begin{bullets}
   \item Contributed to VideoScience-Bench, the \textbf{first benchmark to evaluate video models as zero-shot scientific reasoners}, with 200 curated prompts spanning 14 topics and 103 undergraduate physics and chemistry concepts
@@ -146,7 +146,7 @@ Machine Learning, Agentic Systems, System Design, LLM Evals, Knowledge Graphs, R
 \end{bullets}
 
 \paper{Towards Interpretable and Inference-Optimal CoT Reasoning with Sparse Autoencoder-Guided Generation}{2510.01528}
-  {Preprint}{Feb 2025}
+  {Preprint, 2025}
   {\textbf{Daniel Zhao}$^{*}$, Abhilash Shankarampeta$^{*}$, Lanxiang Hu$^{*}$, Tajana Rosing, Hao Zhang \quad ($^{*}$equal contribution)}
 \begin{bullets}
   \item Proposed an unsupervised method that trains a sparse autoencoder (SAE) on LLM token representations and applies \textit{k}-means clustering to build a cluster-transition graph from correct mathematical reasoning traces
@@ -155,7 +155,7 @@ Machine Learning, Agentic Systems, System Design, LLM Evals, Knowledge Graphs, R
 \end{bullets}
 
 \paper{CLLMs: Consistency Large Language Models}{2403.00835}
-  {ICML 2024, open-source contributor}{Jun 2024}
+  {ICML 2024, open-source contributor}
   {Siqi Kou, Lanxiang Hu, Zhezhi He, Zhijie Deng, Hao Zhang}
 \begin{bullets}
   \item Added \textbf{QLoRA support} to the official CLLM implementation (\href{https://github.com/hao-ai-lab/Consistency_LLM}{hao-ai-lab/Consistency\_LLM}, 400+ GitHub stars), \href{https://github.com/hao-ai-lab/Consistency_LLM/pull/12}{merged upstream} as an opt-in PEFT LoRA path (rank 32) with k-bit training preparation, wired through the multi-GPU FSDP training scripts
